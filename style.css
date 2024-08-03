@@ -27,3 +27,7 @@ body {
     height: auto; /* Maintains the aspect ratio */
 }
 
+#projects{
+    text-align : center;
+}
+
