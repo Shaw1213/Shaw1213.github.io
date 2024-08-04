@@ -1,0 +1,32 @@
+/* Code block container */
+body .code-block {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+body .code-block pre {
+    margin: 0;
+}
+
+body .code-block code {
+    white-space: pre-wrap;
+    display: block;
+}
+
+/* Basic syntax highlighting */
+body .code-block .keyword { color: #007bff; }
+body .code-block .string { color: #28a745; }
+body .code-block .comment { color: #6c757d; font-style: italic; }
+body .code-block .function { color: #dc3545; }
+body .code-block .number { color: #fd7e14; }
+body .code-block .built_in { color: #6610f2; }
+
+/* You can add more syntax highlighting classes as needed */

@@ -2,21 +2,92 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Basic Template</title>
+    <link rel="stylesheet" href="code-displayer.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrappy Squirrel - Portfolio</title>
 </head>
 <body>
-	<h1>Scrappy Squirrel</h1>
-	<p><a href="https://almitytuhm.itch.io/scrappy-squirrel">Link to Itch.io</a></p>
-	<img src="Images/Scrappy_Squirrel.png" style="width: 500px; height: auto;">
-	<p>
-	<a href="Scrappy_Squirrel_Web/index_Scrappy_Squirrel.html">Play Game</a>
-	</p>
-</body>
-<body>
-	<p>
-		This is my very Game Project that I have ever made. It is a 2D platformer game that I made in Unity. The game is about a squirrel that is trying to escape from a forest that is on fire. The squirrel has to jump over obstacles and avoid fireballs to survive. The game has 3 levels and the difficulty increases as the player progresses through the levels. The game is available on Itch.io and can be played in a web browser.
-	</p>
+    <h1>Scrappy Squirrel</h1>
+    <p><a href="https://almitytuhm.itch.io/scrappy-squirrel">Link to Itch.io</a></p>
+    <img src="Images/Scrappy_Squirrel.png" style="width: 500px; height: auto;" alt="Scrappy Squirrel Game">
+    <p>
+        <a href="Scrappy_Squirrel_Web/index_Scrappy_Squirrel.html">Play Game</a>
+    </p>
+    <p>
+        This is one of my very first game projects that I have worked on. This project really helped me understand
+        the basics of Unity and how to use it. It helped me combine what I have learned in computer science with Unity.
+    </p>
+    
+    <h2>Code Snippet: Random Position Generator</h2>
+    <p>Here's a piece of code from the Scrappy Squirrel project:</p>
+    <div class="code-block">
+        <pre><code><span class="keyword">using</span> System.Collections;
+<span class="keyword">using</span> System.Collections.Generic;
+<span class="keyword">using</span> UnityEngine;
+<span class="keyword">using</span> UnityEngine.U2D;
+
+<span class="keyword">public class</span> randomPosition: MonoBehaviour
+{
+    <span class="keyword">public</span> int numberToSpawn;
+    <span class="keyword">public</span> List&lt;GameObject&gt; spawnPool;
+    <span class="keyword">public</span> List&lt;GameObject&gt; quadPool;
+    
+    <span class="keyword">void</span> <span class="function">Start</span>()
+    {
+        <span class="function">SpawnObject</span>();
+    }
+
+    <span class="keyword">private</span> int <span class="function">ramdomQuad</span>(){
+        int ramdomQuad = Random.<span class="function">Range</span>(<span class="number">0</span>, quadPool.Count);
+        <span class="keyword">return</span> ramdomQuad;
+    }
+
+    <span class="keyword">public void</span> <span class="function">SpawnObject</span>(){
+        GameObject ToSpawn;
+
+        float screenX, ScrrenY;
+        Vector2 pos;
+        <span class="keyword">for</span>(int i = <span class="number">0</span>; i &lt; numberToSpawn; i++){
+            int ramdomQuadnum = <span class="function">ramdomQuad</span>();
+            MeshCollider c = quadPool[ramdomQuadnum].<span class="function">GetComponent</span>&lt;MeshCollider&gt;();
+            ramdomQuadnum = Random.<span class="function">Range</span>(<span class="number">0</span>, quadPool.Count);
+
+            ToSpawn = <span class="function">randomItem</span>();
+
+            screenX = Random.<span class="function">Range</span>(c.bounds.min.x, c.bounds.max.x);
+            ScrrenY = Random.<span class="function">Range</span>(c.bounds.min.y, c.bounds.max.y);
+            pos = <span class="keyword">new</span> Vector2(screenX, ScrrenY);
+
+            <span class="function">Instantiate</span>(ToSpawn, pos, ToSpawn.transform.rotation);
+        }
+    }
+
+    <span class="keyword">private void</span> <span class="function">destoryObject</span>(){
+        <span class="keyword">foreach</span>(GameObject obj <span class="keyword">in</span> GameObject.<span class="function">FindGameObjectsWithTag</span>(<span class="string">"Spawneable"</span>)){
+            <span class="function">Destroy</span>(obj);
+        }
+    }
+
+    <span class="keyword">private</span> GameObject <span class="function">randomItem</span>()
+    {
+        int temp = Random.<span class="function">Range</span>(<span class="number">0</span>, <span class="number">11</span>);
+        <span class="keyword">if</span>(temp == <span class="number">10</span>)
+        {
+            <span class="keyword">return</span> spawnPool[<span class="number">1</span>];
+        }
+        <span class="keyword">else</span>
+        {
+            <span class="keyword">return</span> spawnPool[<span class="number">0</span>];
+        }
+    }
+}</code></pre>
+    </div>
+    <p>
+        It selects random positions
+        within predefined quadrants and instantiates game objects from a spawn pool. This adds variety and challenge to 
+        the gameplay. At that time this was all very new to me, and it was a great lesson
+		on how to do rearch and implement new features.
+    </p>
 </body>
 </html>
