@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="code-displayer.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Animal Ambiguity</h1>
+    <p><a href="https://almitytuhm.itch.io/animal-ambiguity">Link to Itch.io</a></p>
+    <img src="Images/Animal Ambiguity.png" style="width: 500px; height: auto;" alt="Scrappy Squirrel Game">
+    <p>
+        <a href="Animal_ Ambiguity_Web/index_Animal_Ambiguity.html">Play Game</a>
+    </p>
+    <p>
+        Animal Ambiguity was my second Game Jam Project. This time I worked on the inventory system and learned about scripable objects.
+        This project was a great learning experience for me as I learned how to manage game state and create intuitive player interactions.
+  
+    </p>
+    
+    <h2>Code Snippet: Inventory System</h2>
+    <p>Here's a piece of code I implemented for the inventory system in the Scrappy Squirrel project:</p>
+    <div class="code-block">
+        <pre><code><span class="keyword">using</span> System.Collections;
+<span class="keyword">using</span> System.Collections.Generic;
+<span class="keyword">using</span> TMPro;
+<span class="keyword">using</span> UnityEngine;
+
+<span class="keyword">public class</span> Inventory : MonoBehaviour
+{
+    <span class="keyword">private</span> Item[] items = <span class="keyword">new</span> Item[5];
+
+    <span class="keyword">private</span> int itemIndex = 0;
+    <span class="keyword">void</span> <span class="function">Start</span>()
+    {
+        <span class="function">removeCurrentItem</span>();
+    }
+
+    <span class="keyword">void</span> <span class="function">Update</span>()
+    {
+        <span class="keyword">if</span>(Input.<span class="function">GetAxis</span>(<span class="string">"Mouse ScrollWheel"</span>) > 0)
+        {
+            itemIndex++;
+            <span class="keyword">if</span>(itemIndex >= 5)
+            {
+                itemIndex = 0;
+            }
+        }
+
+        <span class="keyword">if</span>(Input.<span class="function">GetAxis</span>(<span class="string">"Mouse ScrollWheel"</span>) < 0)
+        {
+            itemIndex--;
+            <span class="keyword">if</span>(itemIndex < 0)
+            {
+                itemIndex = 4;
+            }
+        }
+
+        <span class="keyword">if</span>(Input.<span class="function">GetKeyDown</span>(KeyCode.Q)){
+            <span class="function">removeCurrentItem</span>();
+        }
+    }
+
+    <span class="keyword">public</span> Item <span class="function">getCurrentItem</span>()
+    {
+        <span class="keyword">return</span> items[itemIndex];
+    }
+
+    <span class="keyword">public</span> <span class="keyword">bool</span> <span class="function">givePlayerItem</span>(Item item)
+    {
+        <span class="keyword">for</span> (int i = 0; i < items.Length; i++)
+        {
+            <span class="keyword">if</span>(items[i] == <span class="keyword">null</span>)
+            {
+                items[i] = item;
+                <span class="keyword">return true</span>;
+            }
+        }
+        <span class="keyword">return false</span>;
+    }
+
+    <span class="keyword">public</span> <span class="keyword">bool</span> <span class="function">hasItem</span>(Item item)
+    {
+        <span class="keyword">for</span> (int i = 0; i < items.Length; i++) 
+        {
+            <span class="keyword">if</span>(items[i] == item)
+            {
+                <span class="keyword">return true</span>;
+            }
+        }
+        <span class="keyword">return false</span>;
+    }
+
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="function">removeCurrentItem</span>()
+    {
+        items[itemIndex] = <span class="keyword">null</span>;
+    }
+}</code></pre>
+    </div>
+    <p>
+        This inventory system manages a collection of up to 5 items. It allows for scrolling through items, adding new items,
+        checking for item possession, and removing items. The system uses Unity's input system to detect mouse scroll and
+        key presses for interaction. This was an integral part of the game mechanics, allowing players to collect and manage
+        items throughout their adventure. Implementing this system taught me a lot about managing game state and creating
+        intuitive player interactions.
+    </p>
+</body>
+</html>
