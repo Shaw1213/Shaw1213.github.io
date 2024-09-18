@@ -4,7 +4,8 @@ body {
     line-height: 1.6;
     font-size: 18px;
     padding: 0 10px;
-    color: #444;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
 #about {
@@ -23,75 +24,61 @@ body {
     font-size: 20px; 
 }
 
-/* Featured Games Styles */
-#featured-games {
-    text-align: center;
-    margin-bottom: 50px;
+/* General Styles for Images */
+.project img,
+.featured-game img {
+    width: 400px;   /* Fixed width */
+    height: 300px;  /* Fixed height */
+    object-fit: cover; /* Maintains aspect ratio */
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.featured-games-container {
+/* Projects Container Styles */
+.projects-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+    gap: 30px; /* Adds 20px space between all items */
 }
 
-.featured-game {
-    width: calc(33.33% - 20px);
-    margin-bottom: 30px;
+/* Project Item Styles */
+.project {
+    width: calc(33.33% - 20px); /* Three items per row, adjusted for gap */
     text-align: center;
+    box-sizing: border-box; /* Includes padding and border in width and height */
+    transition: transform 0.2s; /* Smooth hover effect */
 }
 
-.featured-game img {
-    width: 100%;
-    height: auto;
+.project:hover {
+    transform: scale(1.02); /* Slightly enlarges the project on hover */
 }
 
-@media (max-width: 768px) {
-    .featured-game {
-        width: calc(50% - 15px);
-    }
-}
-
-@media (max-width: 480px) {
-    .featured-game {
-        width: 100%;
-    }
-}
-
-/* Other Projects Styles */
-.project img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-}
-
-#projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-}
-
+/* Section Headings */
+#featured-games h2,
 #projects h2 {
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.project {
-    width: calc(50% - 20px);
-    margin-bottom: 30px;
-    text-align: center;
-}
-
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .project {
-        width: 100%;
+        width: calc(50% - 20px); /* Two items per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .project {
+        width: 100%; /* One item per row on mobile devices */
+    }
+
+    .project img,
+    .featured-game img {
+        width: 100%; /* Ensures images are responsive on small screens */
+        height: auto;
     }
 }

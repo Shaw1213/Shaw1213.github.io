@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three.js Model Viewer with Size Adjustment</title>
+    <title>Three.js Model Viewer with Enhanced Lighting</title>
     <style>
         body { margin: 0; }
         canvas { display: block; }
@@ -24,24 +23,65 @@
         import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer();
+        scene.background = new THREE.Color(0xdddddd); // Optional: set background color
+
+        const camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+        );
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.shadowMap.enabled = true; // Enable shadow mapping
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Optional: choose shadow map type
         document.body.appendChild(renderer.domElement);
 
         const controls = new OrbitControls(camera, renderer.domElement);
 
-        const light = new THREE.AmbientLight(0xffffff);
-        scene.add(light);
+        // Add lights
+        // Ambient light
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
+        scene.add(ambientLight);
 
-        camera.position.z = 5;
+        // Directional light
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(5, 10, 7.5);
+        directionalLight.castShadow = true;
+        directionalLight.shadow.mapSize.width = 1024;
+        directionalLight.shadow.mapSize.height = 1024;
+        directionalLight.shadow.camera.near = 0.5;
+        directionalLight.shadow.camera.far = 500;
+        scene.add(directionalLight);
+
+        // Point light
+        const pointLight = new THREE.PointLight(0xffffff, 0.5);
+        pointLight.position.set(-5, 5, -5);
+        scene.add(pointLight);
+
+        // Hemisphere light (optional)
+        const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.6);
+        hemiLight.position.set(0, 20, 0);
+        scene.add(hemiLight);
+
+        // Add a ground plane to receive shadows
+        const planeGeometry = new THREE.PlaneGeometry(500, 500);
+        const planeMaterial = new THREE.MeshStandardMaterial({ color: 0x808080, depthWrite: false });
+        const ground = new THREE.Mesh(planeGeometry, planeMaterial);
+        ground.rotation.x = -Math.PI / 2;
+        ground.position.y = -0.5; // Adjust based on your model's position
+        ground.receiveShadow = true;
+        scene.add(ground);
+
+        camera.position.set(1, 2, 5);
+        controls.target.set(0, 0, 0);
+        controls.update();
 
         const loader = new GLTFLoader();
         loader.load(
-            'Gltf/Frog.gltf', // Change this to your model file name
+            'Gltf/Frog.gltf',
             function (gltf) {
                 const model = gltf.scene;
-                scene.add(model);
 
                 // Center the model
                 const box = new THREE.Box3().setFromObject(model);
@@ -51,17 +91,21 @@
                 // Scale the model
                 const size = box.getSize(new THREE.Vector3());
                 const maxDim = Math.max(size.x, size.y, size.z);
-                const scale = 1. / maxDim;  // Adjust this value to change the model size
+                const scale = 1.0 / maxDim;
                 model.scale.multiplyScalar(scale);
 
-                // Position camera to fit the model
-                const distance = 1.5 / Math.tan((camera.fov * Math.PI / 180) / 2);
-                camera.position.set(1, 2, distance);
-                camera.lookAt(0, 0, 0);
+                // Enable shadows for the model
+                model.traverse(function (node) {
+                    if (node.isMesh) {
+                        node.castShadow = true;
+                        node.receiveShadow = true;
+                        // Optional: Adjust material properties for better lighting
+                        node.material.flatShading = false;
+                        node.material.needsUpdate = true;
+                    }
+                });
 
-                // Update controls
-                controls.target.set(0, 0, 0);
-                controls.update();
+                scene.add(model);
 
                 console.log('Model loaded and scaled successfully');
             },
