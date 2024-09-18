@@ -23,6 +23,42 @@ body {
     font-size: 20px; 
 }
 
+/* Featured Games Styles */
+#featured-games {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.featured-games-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.featured-game {
+    width: calc(33.33% - 20px);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.featured-game img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .featured-game {
+        width: calc(50% - 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-game {
+        width: 100%;
+    }
+}
+
+/* Other Projects Styles */
 .project img {
     width: 100%;
     max-width: 400px;
@@ -49,18 +85,12 @@ body {
 }
 
 .project {
-    width: calc(33.33% - 20px);
+    width: calc(50% - 20px);
     margin-bottom: 30px;
     text-align: center;
 }
 
 @media (max-width: 768px) {
-    .project {
-        width: calc(50% - 15px);
-    }
-}
-
-@media (max-width: 480px) {
     .project {
         width: 100%;
     }
