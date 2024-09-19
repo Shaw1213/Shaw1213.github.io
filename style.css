@@ -18,7 +18,10 @@ body {
 
 #about p:last-child {
     font-size: 18px;
-    margin-top: 10px;
+    margin-top: 20px;
+    max-width: 500px; /* Adjust this value to control the width */
+    white-space: pre-wrap; /* Preserves whitespace and allows wrapping */
+    line-height: 1.3; /* Adjusts the space between lines */
 }
 
 #contact {
