@@ -16,6 +16,11 @@ body {
     font-size: 30px;
 } 
 
+#about p:last-child {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
 #contact {
     text-align: center;
     display: flex;
