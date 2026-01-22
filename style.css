@@ -1,92 +1,259 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 40px auto;
-    line-height: 1.6;
-    font-size: 18px;
-    padding: 0 10px;
-    background-color: #f0f0f0;
-    color: #333;
+:root {
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+    --color-bg: #f8fafc;
+    --color-card: #ffffff;
+    --color-text: #1e293b;
+    --color-text-muted: #64748b;
+    --color-border: #e2e8f0;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+    --radius: 12px;
+    --transition: 0.2s ease;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-size: 16px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: var(--color-primary-hover);
+}
+
+/* Header / About Section */
 #about {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 30px;
-} 
-
-#about p:last-child {
-    font-size: 18px;
-    margin-top: 20px;
-    max-width: 500px; /* Adjust this value to control the width */
-    white-space: pre-wrap; /* Preserves whitespace and allows wrapping */
-    line-height: 1.3; /* Adjusts the space between lines */
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
 }
 
-#contact {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 20px; 
+#about h1 {
+    font-size: 2.5rem;
+    margin: 0 0 8px 0;
+    font-weight: 700;
 }
 
-/* General Styles for Images */
-.project img,
-.featured-game img {
-    width: 400px;   /* Fixed width */
-    height: 300px;  /* Fixed height */
-    object-fit: cover; /* Maintains aspect ratio */
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+#about .tagline {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    margin: 0 0 30px 0;
 }
 
-/* Projects Container Styles */
-.projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+#about .bio {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius);
+    padding: 30px;
+    max-width: 600px;
     margin: 0 auto;
+    text-align: left;
+}
+
+#about .bio h2 {
+    font-size: 1.25rem;
+    margin: 0 0 15px 0;
+    color: white;
+}
+
+#about .bio p {
+    margin: 0 0 12px 0;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+#about .bio p:last-child {
+    margin-bottom: 0;
+}
+
+#about .bio a {
+    color: #60a5fa;
+}
+
+#about .bio a:hover {
+    color: #93c5fd;
+}
+
+/* Main Content */
+main {
     max-width: 1200px;
-    gap: 30px; /* Adds 20px space between all items */
-}
-
-/* Project Item Styles */
-.project {
-    width: calc(33.33% - 20px); /* Three items per row, adjusted for gap */
-    text-align: center;
-    box-sizing: border-box; /* Includes padding and border in width and height */
-    transition: transform 0.2s; /* Smooth hover effect */
-}
-
-.project:hover {
-    transform: scale(1.02); /* Slightly enlarges the project on hover */
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 /* Section Headings */
 #featured-games h2,
 #projects h2 {
-    width: 100%;
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 1.75rem;
+    margin: 0 0 30px 0;
+    color: var(--color-text);
 }
 
-/* Media Queries for Responsiveness */
+/* Projects Container */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+/* Project Card */
+.project {
+    background: var(--color-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition), box-shadow var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.project img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.project h3 {
+    font-size: 1.2rem;
+    margin: 16px 16px 8px 16px;
+    color: var(--color-text);
+}
+
+.project p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0 16px 16px 16px;
+    flex-grow: 1;
+}
+
+/* Placeholder Image */
+.placeholder-img {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Project Links */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 16px 16px 16px;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all var(--transition);
+    border: 1px solid var(--color-border);
+    background: var(--color-card);
+    color: var(--color-text);
+}
+
+.btn:hover {
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+    color: white;
+}
+
+.btn-disabled {
+    background: var(--color-border);
+    border-color: var(--color-border);
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+}
+
+/* Footer */
+#contact {
+    background: #1e293b;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#contact h2 {
+    margin: 0 0 20px 0;
+    font-size: 1.5rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.contact-links .btn {
+    background: transparent;
+    border-color: #475569;
+    color: white;
+}
+
+.contact-links .btn:hover {
+    background: #334155;
+    border-color: #64748b;
+    color: white;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .project {
-        width: calc(50% - 20px); /* Two items per row on tablets */
-    }
-}
-
-@media (max-width: 480px) {
-    .project {
-        width: 100%; /* One item per row on mobile devices */
+    #about h1 {
+        font-size: 2rem;
     }
 
-    .project img,
-    .featured-game img {
-        width: 100%; /* Ensures images are responsive on small screens */
-        height: auto;
+    #about .bio {
+        padding: 20px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
     }
 }

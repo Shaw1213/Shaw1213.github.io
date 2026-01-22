@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuxiao (Shawn) Zhang - Game Engineer Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section id="about">
-        <h2>Yuxiao (Shawn) Zhang</h2>
-        <p>Game Engineer</p>
-        <p>About Me</p>
-        <p>Hi there! Welcome to my site!
-            <br>I'm a passionate game enthusiast eager to break into the industry and make a lasting impact. 
-            <br>My journey into gaming has a unique story—when I was younger, I had a special eye condition, and the doctor advised my parents to let me exercise my eyes more. That’s how I got my first Game Boy and PC, and I've been hooked ever since!
-            <br>Currently, I'm playing <a href="https://store.steampowered.com/app/1422450/Deadlock/">Deadlock</a> by Valve, which I believe is the ultimate evolution of hero shooter games.
-        </p>
-    </section>
+    <header id="about">
+        <h1>Yuxiao (Shawn) Zhang</h1>
+        <p class="tagline">Game Engineer</p>
+        <div class="bio">
+            <h2>About Me</h2>
+            <p>Hi there! Welcome to my site!</p>
+            <p>I'm a passionate game enthusiast eager to break into the industry and make a lasting impact.</p>
+            <p>My journey into gaming has a unique story—when I was younger, I had a special eye condition, and the doctor advised my parents to let me exercise my eyes more. That's how I got my first Game Boy and PC, and I've been hooked ever since!</p>
+            <p>Currently, I'm playing <a href="https://store.steampowered.com/app/1422450/Deadlock/">Deadlock</a> by Valve, which I believe is the ultimate evolution of hero shooter games.</p>
+        </div>
+    </header>
+
+    <main>
 
     <!-- Featured Games Section -->
     <section id="featured-games">
@@ -21,39 +27,47 @@
         <div class="projects-container">
             <div class="project">
                 <h3>Animal Ambiguity</h3>
-                <img src="Images/Animal Ambiguity.png" alt="Animal Ambiguity">
-                <p>You are a raccoon who has stumbled upon a strange human book containing what appears to be a list of tasks.  The most logical thing to do now is to do those tasks, which probably don't have additional interpretations...</p>
-                <a href="Animal_Ambiguity.html">View Project</a>
-                <a href="Animal_ Ambiguity_Web/index_Animal_Ambiguity.html">-Play Game!</a>
-
+                <img src="Images/Animal Ambiguity.png" alt="Animal Ambiguity" loading="lazy">
+                <p>You are a raccoon who has stumbled upon a strange human book containing what appears to be a list of tasks. The most logical thing to do now is to do those tasks, which probably don't have additional interpretations...</p>
+                <div class="project-links">
+                    <a href="Animal_Ambiguity.html" class="btn">View Project</a>
+                    <a href="Animal_ Ambiguity_Web/index_Animal_Ambiguity.html" class="btn btn-primary">Play Game</a>
+                </div>
             </div>
             <div class="project">
                 <h3>Remote Code Execution</h3>
-                <img src="Images/Remote.JPG" alt="Car Driving Sim">
-                <p>Your car has been hacked. When a hacker takes control, a Letter will apear on the screen. Press the corresponding key to regain control of your car.</p>
-                <a href="https://medium.com/@mdzzsb233/test-5f57a531585c">View Project</a>
-                <a href="Remote_Code_Execution_Web/index_Remote.html">-Play Game!</a>
+                <img src="Images/Remote.JPG" alt="Remote Code Execution Game" loading="lazy">
+                <p>Your car has been hacked. When a hacker takes control, a letter will appear on the screen. Press the corresponding key to regain control of your car.</p>
+                <div class="project-links">
+                    <a href="https://medium.com/@mdzzsb233/test-5f57a531585c" class="btn">View Project</a>
+                    <a href="Remote_Code_Execution_Web/index_Remote.html" class="btn btn-primary">Play Game</a>
+                </div>
             </div>
             <div class="project">
                 <h3>Hampter Ball</h3>
-                <img src="Images/HB.png" alt="Hampter Ball">
-                <p>Fatten up and roll out!
-                    Roll your Hampter around to push off enemy and take your victory.  Progress through tough stages in the bedroom of a child.  Collect food pellets to enlarge your Hampter and become stronger than the opposing Hampters.</p>
-                <a href="https://medium.com/@mdzzsb233/making-hampter-ball-9916cad3294f">View Project</a>
-                <a href="https://almitytuhm.itch.io/hampter-ball" >-Play Game!</a>
+                <img src="Images/HB.png" alt="Hampter Ball" loading="lazy">
+                <p>Fatten up and roll out! Roll your Hampter around to push off enemies and take your victory. Progress through tough stages in the bedroom of a child. Collect food pellets to enlarge your Hampter and become stronger than the opposing Hampters.</p>
+                <div class="project-links">
+                    <a href="https://medium.com/@mdzzsb233/making-hampter-ball-9916cad3294f" class="btn">View Project</a>
+                    <a href="https://almitytuhm.itch.io/hampter-ball" class="btn btn-primary">Play Game</a>
+                </div>
             </div>
             <div class="project">
                 <h3>Scrappy Squirrel</h3>
-                <img src="Images/Scrappy_Squirrel.png" alt="Scrappy Squirrel">
-                <p>Winter is coming, and you're running out of time.  Quickly gather as many acorns as your can to keep your family fed through the winter before the snow piles up too high.</p>
-                <a href="Scrappy_Squirrel.html">View Project</a>
-                <a href="Scrappy_Squirrel_Web/index_Scrappy_Squirrel.html">-Play Game！</a>
+                <img src="Images/Scrappy_Squirrel.png" alt="Scrappy Squirrel" loading="lazy">
+                <p>Winter is coming, and you're running out of time. Quickly gather as many acorns as you can to keep your family fed through the winter before the snow piles up too high.</p>
+                <div class="project-links">
+                    <a href="Scrappy_Squirrel.html" class="btn">View Project</a>
+                    <a href="Scrappy_Squirrel_Web/index_Scrappy_Squirrel.html" class="btn btn-primary">Play Game</a>
+                </div>
             </div>
             <div class="project">
-                <h3>Tetris </h3>
-                <img src="" alt=>
-                <p>A Tettis Game I'm making using C++ and RayLib</p>
-                <a href=>View Project</a>
+                <h3>Tetris</h3>
+                <div class="placeholder-img">Coming Soon</div>
+                <p>A Tetris game I'm making using C++ and RayLib.</p>
+                <div class="project-links">
+                    <span class="btn btn-disabled">In Progress</span>
+                </div>
             </div>
         </div>
     </section>
@@ -64,31 +78,40 @@
         <div class="projects-container">
             <div class="project">
                 <h3>Level Design Projects</h3>
-                <img src="Images/Side Scroller.JPG" alt="Level Design Projects">
-                <p>A 2D side scroller and A 3D puzzle Level Made with Unity</p>
-                <a href="Side_Scroller.html">View Project</a>
-                <a href="Level-Design_3D_Web/index_Level_Design-3D.html">Play 3D Level</a>
-                <a href="Side Scroller Web/index_Side_Scroller.html">Play 2D Level</a>
+                <img src="Images/Side Scroller.JPG" alt="Level Design Projects" loading="lazy">
+                <p>A 2D side scroller and a 3D puzzle level made with Unity.</p>
+                <div class="project-links">
+                    <a href="Side_Scroller.html" class="btn">View Project</a>
+                    <a href="Level-Design_3D_Web/index_Level_Design-3D.html" class="btn btn-primary">Play 3D</a>
+                    <a href="Side Scroller Web/index_Side_Scroller.html" class="btn btn-primary">Play 2D</a>
+                </div>
             </div>
             <div class="project">
                 <h3>My Journey Making a Game Engine</h3>
-                <img src="Images/cpp_GL.png" alt="cpp_GL">
-                <p>Making a Game Engine useing c++ 14 and OpenGL 3.3 Core </p>
-                <a href="cppGL.html">View My prograss</a>
+                <img src="Images/cpp_GL.png" alt="OpenGL Game Engine" loading="lazy">
+                <p>Making a game engine using C++ 14 and OpenGL 3.3 Core.</p>
+                <div class="project-links">
+                    <a href="cppGL.html" class="btn">View Progress</a>
+                </div>
             </div>
             <div class="project">
                 <h3>A 3D Render of a Model</h3>
-                <img src="Images/Frog.png" alt="3D Model Render">
-                <p>A model I made useing Maya, than rendered useing three.js </p>
-                <a href="Model.html">View Model</a>
+                <img src="Images/Frog.png" alt="3D Model Render" loading="lazy">
+                <p>A model I made using Maya, then rendered using three.js.</p>
+                <div class="project-links">
+                    <a href="Model.html" class="btn btn-primary">View Model</a>
+                </div>
             </div>
         </div>
     </section>
+    </main>
 
     <footer id="contact">
         <h2>Contact</h2>
-        <a href="https://www.linkedin.com/in/yuxiao-zhang-dev">LinkedIn</a>
-        <p>Email: yuxiao.zhang@utah.edu</p>
+        <div class="contact-links">
+            <a href="https://www.linkedin.com/in/yuxiao-zhang-dev" class="btn">LinkedIn</a>
+            <a href="mailto:yuxiao.zhang@utah.edu" class="btn">Email Me</a>
+        </div>
     </footer>
 </body>
 </html>
