@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuxiao (Shawn) Zhang - Game Engineer Portfolio</title>
+    <title>Yuxiao (Shawn) Zhang - Technical Designer / Gamer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="#about" class="nav-brand">Shawn Zhang</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#shipped-games">Shipped Games</a></li>
+                <li><a href="#personal-projects">Personal Projects</a></li>
+                <li><a href="blog/">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header id="about">
         <h1>Yuxiao (Shawn) Zhang</h1>
-        <p class="tagline">Game Engineer</p>
+        <p class="tagline">Technical Designer / Gamer</p>
         <div class="bio">
             <h2>About Me</h2>
             <p>Hi there! Welcome to my site!</p>
@@ -20,90 +38,160 @@
     </header>
 
     <main>
+        <!-- Shipped Games Section -->
+        <section id="shipped-games">
+            <h2>Shipped Games</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <h3>Bricks Over Blocks</h3>
+                    <div class="placeholder-img">Image Coming Soon</div>
+                    <div class="project-meta">
+                        <span class="badge badge-steam">Steam</span>
+                        <span class="badge badge-engine">Unreal Engine 5</span>
+                        <span class="badge badge-role">Engineer/UI</span>
+                    </div>
+                    <p>A creative building game developed with Unreal Engine 5. I worked on engineering and UI systems.</p>
+                    <div class="project-links">
+                        <a href="https://store.steampowered.com/app/3026400/Bricks_Over_Blocks/" class="btn btn-steam">View on Steam</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>Beamdown</h3>
+                    <div class="placeholder-img">Image Coming Soon</div>
+                    <div class="project-meta">
+                        <span class="badge badge-steam">Steam</span>
+                        <span class="badge badge-engine">Unity</span>
+                        <span class="badge badge-role">Engineer-UI</span>
+                    </div>
+                    <p>A fast-paced action game built with Unity. Contributed as a UI engineer.</p>
+                    <div class="project-links">
+                        <a href="https://store.steampowered.com/app/2935620/Beamdown/" class="btn btn-steam">View on Steam</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>Hampter Ball</h3>
+                    <img src="Images/HB.png" alt="Hampter Ball" loading="lazy">
+                    <div class="project-meta">
+                        <span class="badge badge-itch">Itch.io</span>
+                        <span class="badge badge-engine">Unity</span>
+                        <span class="badge badge-role">Engineer/Designer</span>
+                    </div>
+                    <p>Fatten up and roll out! Roll your Hampter around to push off enemies and take your victory. Progress through tough stages in the bedroom of a child.</p>
+                    <div class="project-links">
+                        <a href="https://medium.com/@mdzzsb233/making-hampter-ball-9916cad3294f" class="btn">View Project</a>
+                        <a href="https://almitytuhm.itch.io/hampter-ball" class="btn btn-itch">Play on Itch.io</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Featured Games Section -->
-    <section id="featured-games">
-        <h2>Featured Games</h2>
-        <div class="projects-container">
-            <div class="project">
-                <h3>Animal Ambiguity</h3>
-                <img src="Images/Animal Ambiguity.png" alt="Animal Ambiguity" loading="lazy">
-                <p>You are a raccoon who has stumbled upon a strange human book containing what appears to be a list of tasks. The most logical thing to do now is to do those tasks, which probably don't have additional interpretations...</p>
-                <div class="project-links">
-                    <a href="Animal_Ambiguity.html" class="btn">View Project</a>
-                    <a href="Animal_ Ambiguity_Web/index_Animal_Ambiguity.html" class="btn btn-primary">Play Game</a>
+        <!-- Personal Projects Section -->
+        <section id="personal-projects">
+            <h2>Personal Projects</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <h3>Action Game (UE5 C++)</h3>
+                    <div class="placeholder-img">In Development</div>
+                    <div class="project-meta">
+                        <span class="badge badge-wip">Work in Progress</span>
+                        <span class="badge badge-engine">Unreal Engine 5</span>
+                    </div>
+                    <p>An action game being developed in Unreal Engine 5 using C++. Exploring advanced gameplay mechanics and combat systems.</p>
+                    <div class="project-links">
+                        <span class="btn btn-disabled">Coming Soon</span>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>UEFN Boss Fight</h3>
+                    <div class="placeholder-img">Image Coming Soon</div>
+                    <div class="project-meta">
+                        <span class="badge badge-engine">UEFN/Verse</span>
+                    </div>
+                    <p>A boss fight experience created using Unreal Editor for Fortnite and Verse scripting language.</p>
+                    <div class="project-links">
+                        <span class="btn btn-disabled">Details Coming</span>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>Dungeons & Drinks</h3>
+                    <div class="placeholder-img">Image Coming Soon</div>
+                    <div class="project-meta">
+                        <span class="badge badge-engine">Unity Mobile</span>
+                    </div>
+                    <p>A mobile game project built with Unity, featuring dungeon exploration mechanics.</p>
+                    <div class="project-links">
+                        <span class="btn btn-disabled">Details Coming</span>
+                    </div>
                 </div>
             </div>
-            <div class="project">
-                <h3>Remote Code Execution</h3>
-                <img src="Images/Remote.JPG" alt="Remote Code Execution Game" loading="lazy">
-                <p>Your car has been hacked. When a hacker takes control, a letter will appear on the screen. Press the corresponding key to regain control of your car.</p>
-                <div class="project-links">
-                    <a href="https://medium.com/@mdzzsb233/test-5f57a531585c" class="btn">View Project</a>
-                    <a href="Remote_Code_Execution_Web/index_Remote.html" class="btn btn-primary">Play Game</a>
-                </div>
-            </div>
-            <div class="project">
-                <h3>Hampter Ball</h3>
-                <img src="Images/HB.png" alt="Hampter Ball" loading="lazy">
-                <p>Fatten up and roll out! Roll your Hampter around to push off enemies and take your victory. Progress through tough stages in the bedroom of a child. Collect food pellets to enlarge your Hampter and become stronger than the opposing Hampters.</p>
-                <div class="project-links">
-                    <a href="https://medium.com/@mdzzsb233/making-hampter-ball-9916cad3294f" class="btn">View Project</a>
-                    <a href="https://almitytuhm.itch.io/hampter-ball" class="btn btn-primary">Play Game</a>
-                </div>
-            </div>
-            <div class="project">
-                <h3>Scrappy Squirrel</h3>
-                <img src="Images/Scrappy_Squirrel.png" alt="Scrappy Squirrel" loading="lazy">
-                <p>Winter is coming, and you're running out of time. Quickly gather as many acorns as you can to keep your family fed through the winter before the snow piles up too high.</p>
-                <div class="project-links">
-                    <a href="Scrappy_Squirrel.html" class="btn">View Project</a>
-                    <a href="Scrappy_Squirrel_Web/index_Scrappy_Squirrel.html" class="btn btn-primary">Play Game</a>
-                </div>
-            </div>
-            <div class="project">
-                <h3>Tetris</h3>
-                <div class="placeholder-img">Coming Soon</div>
-                <p>A Tetris game I'm making using C++ and RayLib.</p>
-                <div class="project-links">
-                    <span class="btn btn-disabled">In Progress</span>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Other Projects Section -->
-    <section id="projects">
-        <h2>Other Projects</h2>
-        <div class="projects-container">
-            <div class="project">
-                <h3>Level Design Projects</h3>
-                <img src="Images/Side Scroller.JPG" alt="Level Design Projects" loading="lazy">
-                <p>A 2D side scroller and a 3D puzzle level made with Unity.</p>
-                <div class="project-links">
-                    <a href="Side_Scroller.html" class="btn">View Project</a>
-                    <a href="Level-Design_3D_Web/index_Level_Design-3D.html" class="btn btn-primary">Play 3D</a>
-                    <a href="Side Scroller Web/index_Side_Scroller.html" class="btn btn-primary">Play 2D</a>
+        <hr class="section-divider">
+
+        <!-- Archive Section -->
+        <section id="archive" class="archive-section">
+            <h2>Game Jam & Learning Projects</h2>
+            <div class="archive-toggle">
+                <button onclick="document.querySelector('.archive-content').classList.toggle('active'); this.textContent = this.textContent === 'Show Projects' ? 'Hide Projects' : 'Show Projects';">Show Projects</button>
+            </div>
+            <div class="archive-content">
+                <div class="projects-container">
+                    <div class="project">
+                        <h3>Animal Ambiguity</h3>
+                        <img src="Images/Animal Ambiguity.png" alt="Animal Ambiguity" loading="lazy">
+                        <p>You are a raccoon who has stumbled upon a strange human book containing what appears to be a list of tasks. The most logical thing to do now is to do those tasks, which probably don't have additional interpretations...</p>
+                        <div class="project-links">
+                            <a href="Animal_Ambiguity.html" class="btn">View Project</a>
+                            <a href="Animal_ Ambiguity_Web/index_Animal_Ambiguity.html" class="btn btn-primary">Play Game</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h3>Remote Code Execution</h3>
+                        <img src="Images/Remote.JPG" alt="Remote Code Execution Game" loading="lazy">
+                        <p>Your car has been hacked. When a hacker takes control, a letter will appear on the screen. Press the corresponding key to regain control of your car.</p>
+                        <div class="project-links">
+                            <a href="https://medium.com/@mdzzsb233/test-5f57a531585c" class="btn">View Project</a>
+                            <a href="Remote_Code_Execution_Web/index_Remote.html" class="btn btn-primary">Play Game</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h3>Scrappy Squirrel</h3>
+                        <img src="Images/Scrappy_Squirrel.png" alt="Scrappy Squirrel" loading="lazy">
+                        <p>Winter is coming, and you're running out of time. Quickly gather as many acorns as you can to keep your family fed through the winter before the snow piles up too high.</p>
+                        <div class="project-links">
+                            <a href="Scrappy_Squirrel.html" class="btn">View Project</a>
+                            <a href="Scrappy_Squirrel_Web/index_Scrappy_Squirrel.html" class="btn btn-primary">Play Game</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h3>Level Design Projects</h3>
+                        <img src="Images/Side Scroller.JPG" alt="Level Design Projects" loading="lazy">
+                        <p>A 2D side scroller and a 3D puzzle level made with Unity.</p>
+                        <div class="project-links">
+                            <a href="Side_Scroller.html" class="btn">View Project</a>
+                            <a href="Level-Design_3D_Web/index_Level_Design-3D.html" class="btn btn-primary">Play 3D</a>
+                            <a href="Side Scroller Web/index_Side_Scroller.html" class="btn btn-primary">Play 2D</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h3>My Journey Making a Game Engine</h3>
+                        <img src="Images/cpp_GL.png" alt="OpenGL Game Engine" loading="lazy">
+                        <p>Making a game engine using C++ 14 and OpenGL 3.3 Core.</p>
+                        <div class="project-links">
+                            <span class="btn btn-disabled">Coming Soon</span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h3>A 3D Render of a Model</h3>
+                        <img src="Images/Frog.png" alt="3D Model Render" loading="lazy">
+                        <p>A model I made using Maya, then rendered using three.js.</p>
+                        <div class="project-links">
+                            <a href="Model.html" class="btn btn-primary">View Model</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="project">
-                <h3>My Journey Making a Game Engine</h3>
-                <img src="Images/cpp_GL.png" alt="OpenGL Game Engine" loading="lazy">
-                <p>Making a game engine using C++ 14 and OpenGL 3.3 Core.</p>
-                <div class="project-links">
-                    <a href="cppGL.html" class="btn">View Progress</a>
-                </div>
-            </div>
-            <div class="project">
-                <h3>A 3D Render of a Model</h3>
-                <img src="Images/Frog.png" alt="3D Model Render" loading="lazy">
-                <p>A model I made using Maya, then rendered using three.js.</p>
-                <div class="project-links">
-                    <a href="Model.html" class="btn btn-primary">View Model</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
     </main>
 
     <footer id="contact">
@@ -113,5 +201,7 @@
             <a href="mailto:yuxiao.zhang@utah.edu" class="btn">Email Me</a>
         </div>
     </footer>
+
+    <script src="js/nav.js"></script>
 </body>
 </html>
