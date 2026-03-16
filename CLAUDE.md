@@ -4,40 +4,53 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a GitHub Pages portfolio website (Shaw1213.github.io) showcasing game development projects. It's a static HTML/CSS site with no build system.
-
-## Architecture
-
-- **Static HTML site** - No framework, no build step
-- **Main entry**: `index.html` - Portfolio homepage with project grid
-- **Project pages**: Individual HTML files (`Animal_Ambiguity.html`, `Scrappy_Squirrel.html`, etc.) for detailed project writeups
-- **Unity WebGL builds**: Multiple subdirectories contain exported Unity WebGL games (e.g., `Scrappy_Squirrel_Web/`, `Animal_ Ambiguity_Web/`)
-
-## Key Files
-
-- `style.css` - Main stylesheet with responsive grid layout (3-column → 2-column → 1-column)
-- `code-displayer.css` - Syntax highlighting for code snippets in project pages
-- `Images/` - Project screenshots and assets
+GitHub Pages portfolio site for Shawn Zhang (yuxiaozhang.com via CNAME) showcasing game development projects. Static HTML/CSS/JS — no build step, no framework.
 
 ## Development
 
-No build commands needed. Open HTML files directly in a browser or use a local server:
+No build commands. Serve locally for testing:
 
 ```bash
-# Using Python
 python -m http.server 8000
-
-# Using Node.js
+# or
 npx serve
 ```
 
 ## Deployment
 
-Push to `main` branch - GitHub Pages automatically deploys from the repository root.
+Push to `main` branch — GitHub Pages deploys automatically from repository root.
 
-## Unity WebGL Structure
+## Architecture
 
-Each Unity game has:
-- `index_[GameName].html` - Entry point
-- `Build/` - Compiled WebGL files (.loader.js, .framework.js, .data, .wasm)
-- `TemplateData/` - Unity loading screen assets and `style.css`
+### Pages
+
+- `index.html` — Portfolio homepage: hero/about, shipped games (featured cards), personal projects, game jam & learning projects
+- Individual project pages at root: `Animal_Ambiguity.html`, `Scrappy_Squirrel.html`, `Remote.html`, `Side_Scroller.html`, `Model.html`
+
+### Stylesheets
+
+- `style.css` — All site styles, CSS custom properties (`:root` variables), responsive nav, featured cards (shipped games use side-by-side media+info layout), project grid, badges, buttons. Responsive at 768px breakpoint.
+- `code-displayer.css` — Syntax highlighting for code snippets in project detail pages
+
+### JavaScript (`js/`)
+
+- `nav.js` — Shared across all pages: mobile hamburger toggle, smooth scroll for anchor links, sticky nav scroll shadow
+
+### Index Page Layout
+
+- **Shipped Games** — `.featured-grid` with `.featured-card` (2-column: media left, info right). Media area supports `<img>`, `<video>`, `<iframe>`, or placeholder divs. Stacks vertically on mobile.
+- **Personal Projects** — Standard `.projects-container` grid with `.project` cards
+- **Game Jam & Learning** — Same card grid, all visible (no hidden archive)
+
+### Unity WebGL Games
+
+Subdirectories with exported Unity WebGL builds. These are build artifacts — do not modify:
+- `Scrappy_Squirrel_Web/`, `Animal_ Ambiguity_Web/` (note space before "Ambiguity"), `Remote_Code_Execution_Web/`, `Level-Design_3D_Web/`, `Side Scroller Web/`, `WebGL_HB/`
+
+Each contains `index_[Name].html`, `Build/` (compiled .wasm/.data/.js), and `TemplateData/`.
+
+### Adding Media to Project Cards
+
+Featured cards (shipped games): place `<img>`, `<video>`, or `<iframe>` inside `.featured-media`.
+Standard cards: place `<img>` or `<video>` as first child of `.project`.
+Images/GIFs go in `Images/` folder. For videos, prefer YouTube embeds or `<video>` with mp4.
