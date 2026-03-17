@@ -54,7 +54,8 @@
     async function init() {
         const lang = getLang();
         try {
-            const resp = await fetch('lang/zh.json');
+            const base = document.querySelector('script[src*="i18n.js"]').src.replace(/js\/i18n\.js.*$/, '');
+            const resp = await fetch(base + 'lang/zh.json');
             translations = await resp.json();
         } catch (e) {
             console.warn('Failed to load translations', e);

@@ -391,6 +391,14 @@ section h2 {
     margin-top: 14px;
 }
 
+.detail-content .lang-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
 .detail-content {
     max-width: 860px;
     margin: 0 auto;

@@ -67,6 +67,13 @@
         </section>
     </main>
 
-    <script src="../js/nav.js"></script>
+    <button id="lang-toggle" class="lang-toggle" title="Switch language">中文</button>
+    <script>
+        const toggle = document.querySelector('.nav-toggle');
+        const cats = document.querySelector('.nav-cats');
+        toggle.addEventListener('click', () => { cats.classList.toggle('open'); toggle.classList.toggle('active'); });
+        cats.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { cats.classList.remove('open'); toggle.classList.remove('active'); }); });
+    </script>
+    <script src="../js/i18n.js"></script>
 </body>
 </html>
