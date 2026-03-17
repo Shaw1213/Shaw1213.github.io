@@ -5,14 +5,14 @@
     --color-primary: #6366f1;
     --color-primary-hover: #818cf8;
     --color-primary-glow: rgba(99, 102, 241, 0.25);
-    --color-bg: #08080c;
-    --color-surface: #111118;
-    --color-card: #13131c;
-    --color-text: #e8e8ec;
-    --color-text-muted: #8585a0;
-    --color-text-dim: #505068;
-    --color-border: #1c1c2c;
-    --color-border-hover: #2e2e48;
+    --color-bg: #0c0c11;
+    --color-surface: #141420;
+    --color-card: #16161f;
+    --color-text: #f0f0f4;
+    --color-text-muted: #a0a0b8;
+    --color-text-dim: #6e6e88;
+    --color-border: #222234;
+    --color-border-hover: #363650;
     --color-accent: #22d3ee;
     --color-gold: #f59e0b;
     --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.35);
@@ -212,7 +212,7 @@ a.nav-name:hover { color: var(--color-primary-hover); }
     font-weight: 400;
     letter-spacing: 0.1em;
     margin-bottom: 2px;
-    background: linear-gradient(180deg, var(--color-text) 40%, var(--color-text-muted) 100%);
+    background: linear-gradient(180deg, #ffffff 30%, var(--color-text) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -445,6 +445,76 @@ section h2::after {
 .btn-xs { padding: 4px 12px; font-size: 0.74rem; }
 
 .btn-disabled { border-color: var(--color-border); color: var(--color-text-dim); cursor: not-allowed; }
+
+/* ===========================
+   Dot Grid Background
+   =========================== */
+.dot-grid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.top-nav, .page-title, main, .detail-content, .play-wrapper, .lang-toggle {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===========================
+   Card Border Shimmer
+   =========================== */
+.card {
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: var(--radius);
+    background: linear-gradient(
+        135deg,
+        transparent 30%,
+        rgba(99, 102, 241, 0.4) 50%,
+        transparent 70%
+    );
+    background-size: 300% 300%;
+    background-position: 100% 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+    animation: shimmer 1.5s ease infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 100% 100%; }
+    50% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* ===========================
+   Scroll Reveal
+   =========================== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Override animation on scroll-reveal sections — let scroll trigger it */
+section.scroll-reveal {
+    animation: none;
+}
 
 /* ===========================
    Animations

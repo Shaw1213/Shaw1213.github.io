@@ -70,7 +70,6 @@
                 const current = getLang();
                 const next = current === 'zh' ? 'en' : 'zh';
                 setLang(next);
-                // Update URL without reload
                 const url = new URL(window.location);
                 url.searchParams.set('lang', next);
                 history.replaceState(null, '', url);

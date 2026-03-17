@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <canvas id="combat-canvas" class="dot-grid"></canvas>
     <nav class="top-nav">
         <a href="../" class="nav-name">Shawn Zhang <span class="nav-title">Combat Designer</span></a>
         <div class="nav-cats">
@@ -28,6 +29,7 @@
                     <a href="level-design.html">Level Design</a>
                 </div>
             </div>
+            <a href="about.html" class="nav-link">About</a>
         </div>
         <button class="nav-toggle" aria-label="Toggle navigation">
             <span></span><span></span><span></span>
@@ -74,6 +76,7 @@
         toggle.addEventListener('click', () => { cats.classList.toggle('open'); toggle.classList.toggle('active'); });
         cats.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { cats.classList.remove('open'); toggle.classList.remove('active'); }); });
     </script>
+    <script src="../js/combat-vfx.js"></script>
     <script src="../js/i18n.js"></script>
 </body>
 </html>

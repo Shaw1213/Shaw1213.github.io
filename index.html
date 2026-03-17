@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <canvas id="combat-canvas" class="dot-grid"></canvas>
     <nav class="top-nav">
         <span class="nav-name">Shawn Zhang <span class="nav-title" data-i18n="nav.title">Combat Designer</span></span>
         <div class="nav-cats">
@@ -27,6 +28,7 @@
                     <a href="projects/level-design.html" data-i18n="ld.title">Level Design</a>
                 </div>
             </div>
+            <a href="projects/about.html" class="nav-link">About</a>
             <a href="https://www.linkedin.com/in/yuxiao-zhang-dev" class="nav-link" target="_blank">LinkedIn</a>
             <a href="mailto:z.yuxiao@icloud.com" class="nav-link">Email</a>
         </div>
@@ -87,7 +89,7 @@
             </div>
         </section>
 
-        <section id="projects">
+        <section id="projects" class="scroll-reveal">
             <h2 data-i18n="section.projects">Prototypes & Demos</h2>
             <div class="card-grid">
                 <a id="greatsword" href="projects/greatsword.html" class="card" style="--i:0">
@@ -137,17 +139,22 @@
     </main>
 
     <script>
+        /* Smooth scroll */
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', function(e) {
                 const el = document.querySelector(this.getAttribute('href'));
                 if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
             });
         });
+
+        /* Mobile nav */
         const toggle = document.querySelector('.nav-toggle');
         const cats = document.querySelector('.nav-cats');
         toggle.addEventListener('click', () => { cats.classList.toggle('open'); toggle.classList.toggle('active'); });
         cats.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { cats.classList.remove('open'); toggle.classList.remove('active'); }); });
+
     </script>
+    <script src="js/combat-vfx.js"></script>
     <script src="js/i18n.js"></script>
 </body>
 </html>
