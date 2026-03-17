@@ -9,7 +9,7 @@
         .play-wrapper {
             max-width: 1020px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 20px 24px;
         }
 
         .play-header {
@@ -20,31 +20,38 @@
         }
 
         .play-header h1 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin: 0;
             color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .play-links {
+            display: flex;
+            gap: 12px;
+            align-items: center;
         }
 
         .play-back {
             color: var(--color-text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: inline-flex;
             align-items: center;
             gap: 6px;
         }
 
         .play-back:hover {
-            color: var(--color-primary);
+            color: var(--color-primary-hover);
         }
 
         .play-frame-container {
             position: relative;
             width: 100%;
             aspect-ratio: 960 / 600;
-            background: #1e293b;
+            background: #000;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--color-border);
         }
 
         .play-frame-container iframe {
@@ -63,74 +70,68 @@
             justify-content: flex-end;
         }
 
-        .play-controls button {
-            padding: 8px 16px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            border-radius: 6px;
-            border: 1px solid var(--color-border);
-            background: var(--color-card);
-            color: var(--color-text);
-            cursor: pointer;
-            transition: all var(--transition);
-        }
-
-        .play-controls button:hover {
-            background: var(--color-bg);
-        }
-
         .play-mobile-warning {
             display: none;
-            background: #fef3c7;
-            color: #92400e;
-            padding: 12px 16px;
-            border-radius: 8px;
-            font-size: 0.875rem;
-            margin-bottom: 16px;
+            background: rgba(234, 179, 8, 0.1);
+            border: 1px solid rgba(234, 179, 8, 0.25);
+            color: #fbbf24;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
         }
 
         @media (max-width: 768px) {
             .play-mobile-warning {
                 display: block;
             }
-
-            .play-frame-container {
-                border-radius: 8px;
-            }
-
-            .play-header h1 {
-                font-size: 1.1rem;
+            .play-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="/" class="nav-brand">Shawn Zhang</a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="/#shipped-games">Shipped Games</a></li>
-                <li><a href="/#personal-projects">Personal Projects</a></li>
-                <li><a href="/#learning-projects">Game Jam & Learning</a></li>
-                <li><a href="/#contact">Contact</a></li>
-            </ul>
+    <nav class="top-nav">
+        <a href="/" class="nav-name">Shawn Zhang <span class="nav-title">Combat Designer</span></a>
+        <div class="nav-cats">
+            <a href="/" class="nav-link">Home</a>
+            <div class="nav-cat">
+                <span class="nav-cat-label">Shipped Games</span>
+                <div class="nav-dropdown">
+                    <a href="projects/bricks-over-blocks.html">Bricks Over Blocks</a>
+                    <a href="projects/beamdown.html">Beamdown</a>
+                    <a href="projects/hampter-ball.html">Hampter Ball</a>
+                </div>
+            </div>
+            <div class="nav-cat">
+                <span class="nav-cat-label">Prototypes & Demos</span>
+                <div class="nav-dropdown">
+                    <a href="projects/greatsword.html">Greatsword Combat System</a>
+                    <a href="projects/dungeons-and-drinks.html">Dungeons & Drinks</a>
+                    <a href="projects/remote-code-execution.html">Remote Code Execution</a>
+                    <a href="projects/level-design.html">Level Design</a>
+                </div>
+            </div>
         </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
     <div class="play-wrapper">
         <div class="play-header">
-            <a href="/" class="play-back">&larr; Back to Portfolio</a>
             <h1 id="game-title">Loading...</h1>
+            <div class="play-links">
+                <a id="detail-link" href="/" class="play-back">&larr; Back to Details</a>
+                <a href="/" class="play-back">&larr; Home</a>
+            </div>
         </div>
 
         <div class="play-mobile-warning">
-            These Unity WebGL games work best on desktop. You may experience performance issues on mobile.
+            Unity WebGL games work best on desktop. You may experience performance issues on mobile.
         </div>
 
         <div class="play-frame-container">
@@ -138,21 +139,24 @@
         </div>
 
         <div class="play-controls">
-            <button onclick="document.getElementById('game-frame').contentWindow.document.querySelector('#unity-fullscreen-button')?.click()" title="Fullscreen">
+            <button class="btn btn-outline" onclick="document.getElementById('game-frame').contentWindow.document.querySelector('#unity-fullscreen-button')?.click()">
                 Fullscreen
             </button>
         </div>
     </div>
 
-    <script src="js/nav.js"></script>
     <script>
+        // Mobile nav toggle
+        const toggle = document.querySelector('.nav-toggle');
+        const cats = document.querySelector('.nav-cats');
+        toggle.addEventListener('click', () => { cats.classList.toggle('open'); toggle.classList.toggle('active'); });
+        cats.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { cats.classList.remove('open'); toggle.classList.remove('active'); }); });
+
         const games = {
-            'hampter-ball':        { title: 'Hampter Ball',            src: 'WebGL_HB/index_HB.html' },
-            'animal-ambiguity':    { title: 'Animal Ambiguity',        src: 'Animal_ Ambiguity_Web/index_Animal_Ambiguity.html' },
-            'remote':              { title: 'Remote Code Execution',   src: 'Remote_Code_Execution_Web/index_Remote.html' },
-            'scrappy-squirrel':    { title: 'Scrappy Squirrel',        src: 'Scrappy_Squirrel_Web/index_Scrappy_Squirrel.html' },
-            'level-design-3d':     { title: 'Level Design 3D',         src: 'Level-Design_3D_Web/index_Level_Design-3D.html' },
-            'side-scroller':       { title: 'Side Scroller',           src: 'Side Scroller Web/index_Side_Scroller.html' },
+            'hampter-ball':    { title: 'Hampter Ball',          src: 'builds/Hampter_Ball/index_HB.html',                       detail: 'projects/hampter-ball.html' },
+            'remote':          { title: 'Remote Code Execution', src: 'builds/Remote_Code_Execution/index_Remote.html',           detail: 'projects/remote-code-execution.html' },
+            'level-design-3d': { title: 'Level Design 3D',       src: 'builds/Level_Design_3D/index_Level_Design-3D.html',        detail: 'projects/level-design.html' },
+            'side-scroller':   { title: 'Side Scroller',         src: 'builds/Side_Scroller/index_Side_Scroller.html',            detail: 'projects/level-design.html' },
         };
 
         const params = new URLSearchParams(window.location.search);
@@ -162,11 +166,12 @@
         if (game) {
             document.getElementById('game-title').textContent = game.title;
             document.getElementById('game-frame').src = game.src;
+            document.getElementById('detail-link').href = game.detail;
             document.title = game.title + ' - Shawn Zhang';
         } else {
             document.getElementById('game-title').textContent = 'Game not found';
             document.querySelector('.play-frame-container').innerHTML =
-                '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;">Game not found. <a href="/" style="margin-left:8px;">Go back</a></div>';
+                '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#71717a;">Game not found. <a href="/" style="margin-left:8px;">Go back</a></div>';
         }
     </script>
 </body>

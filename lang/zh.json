@@ -1,0 +1,38 @@
+{
+    "nav.title": "战斗策划",
+    "nav.shipped": "已发行游戏",
+    "nav.projects": "原型 & Demo",
+    "page.name": "张宇晓",
+    "page.role": "战斗策划",
+    "section.shipped": "已发行游戏",
+    "section.projects": "原型 & Demo",
+
+    "bob.award": "IGDA SLC 年度最佳游戏 (2025)",
+    "bob.desc": "4个月内从零到Steam上线，8人团队。计分系统、实时UI架构、资产集成管线。",
+
+    "beamdown.desc": "EAE毕业项目，30人团队。完整UI开发管线——C#前后端。",
+
+    "hb.desc": "操控你的仓鼠球推开敌人，在充满挑战的关卡中取得胜利。",
+    "hb.play": "在线试玩",
+
+    "gs.title": "大剑战斗系统",
+    "gs.desc": "黑暗之魂风格。6种攻击类型、受击停顿+镜头震动、行为树AI（硬直/击退/眩晕）、GAS属性系统。7天独立完成。",
+    "gs.btn": "视频即将上线",
+
+    "dnd.title": "Dungeons & Drinks",
+    "dnd.desc": "F2P手游。完整GDD、新手引导（FTUE）、付费活动设计。主导跨学科团队协作。",
+    "dnd.btn": "详情即将上线",
+
+
+    "rce.title": "Remote Code Execution",
+    "rce.desc": "你的车被黑客入侵了。按下正确的按键来夺回控制权。",
+    "rce.play": "试玩",
+
+
+    "ld.title": "关卡设计",
+    "ld.desc": "2D横版卷轴 + 3D解谜关卡。",
+
+
+    "placeholder.screenshot": "截图即将上传",
+    "placeholder.footage": "视频即将上传"
+}

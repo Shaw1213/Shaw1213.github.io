@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greatsword Combat System - Shawn Zhang</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="../" class="nav-name">Shawn Zhang <span class="nav-title">Combat Designer</span></a>
+        <div class="nav-cats">
+            <a href="../" class="nav-link">Home</a>
+            <div class="nav-cat">
+                <span class="nav-cat-label">Shipped Games</span>
+                <div class="nav-dropdown">
+                    <a href="bricks-over-blocks.html">Bricks Over Blocks</a>
+                    <a href="beamdown.html">Beamdown</a>
+                    <a href="hampter-ball.html">Hampter Ball</a>
+                </div>
+            </div>
+            <div class="nav-cat">
+                <span class="nav-cat-label">Prototypes & Demos</span>
+                <div class="nav-dropdown">
+                    <a href="greatsword.html">Greatsword Combat System</a>
+                    <a href="dungeons-and-drinks.html">Dungeons & Drinks</a>
+                    <a href="remote-code-execution.html">Remote Code Execution</a>
+                    <a href="level-design.html">Level Design</a>
+                </div>
+            </div>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <main class="detail-content">
+        <a href="../" class="detail-back">&larr; Back to Portfolio</a>
+
+        <header class="detail-header">
+            <div class="tag-row">
+                <span class="tag tag-engine">UE5 C++</span>
+                <span class="tag tag-engine">GAS</span>
+                <span class="tag tag-role">Solo Dev</span>
+            </div>
+            <h1>Greatsword Combat System</h1>
+            <p>Dark Souls-inspired combat demo. 6 attack types, HitStop + CameraShake, Behavior Tree AI with stagger/knockback, GAS attributes. Built in 7 days.</p>
+        </header>
+
+        <section class="detail-section">
+            <h2>Combat Architecture</h2>
+            <ul>
+                <li>6 attack types: light, heavy, sprint, shield bash, charged, jump attack</li>
+                <li>Each attack has independent damage values and stamina cost</li>
+                <li>Stamina management creates high-risk/high-reward combat rhythm</li>
+            </ul>
+        </section>
+
+        <section class="detail-section">
+            <h2>Hit Feedback</h2>
+            <ul>
+                <li>HitStop + CameraShake scaled by attack type (light 1.0x, heavy 2.0x, charged 3.0x)</li>
+                <li>Frame freeze and camera shake emphasize the weight of the greatsword</li>
+            </ul>
+        </section>
+
+        <section class="detail-section">
+            <h2>Enemy AI & Reaction System</h2>
+            <ul>
+                <li>Behavior Tree-driven AI</li>
+                <li>Three reaction types: stagger, knockback, stun</li>
+                <li>GameplayTag-driven reaction selection for differentiated combat feedback</li>
+            </ul>
+        </section>
+
+        <section class="detail-section">
+            <h2>Resource & State Management</h2>
+            <ul>
+                <li>Stamina as core combat resource: attacks, rolls, sprints all consume stamina</li>
+                <li>Delayed recovery forces meaningful attack/defend decisions</li>
+                <li>Roll, dodge, block, light/heavy hit differentiation via Rising/Falling edge detection</li>
+            </ul>
+        </section>
+
+        <section class="detail-section">
+            <h2>Media</h2>
+            <!-- Add gameplay GIFs, videos, or screenshots:
+            <div class="detail-media">
+                <video controls>
+                    <source src="../Images/greatsword-demo.mp4" type="video/mp4">
+                </video>
+            </div>
+            -->
+        </section>
+    </main>
+
+    <script src="../js/nav.js"></script>
+</body>
+</html>

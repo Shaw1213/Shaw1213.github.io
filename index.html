@@ -3,238 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuxiao (Shawn) Zhang - Technical Designer / Gamer</title>
+    <title>Shawn Zhang - Combat Designer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="#about" class="nav-brand">Shawn Zhang</a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#shipped-games">Shipped Games</a></li>
-                <li><a href="#personal-projects">Personal Projects</a></li>
-                <li><a href="#learning-projects">Game Jam & Learning</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <nav class="top-nav">
+        <span class="nav-name">Shawn Zhang <span class="nav-title" data-i18n="nav.title">Combat Designer</span></span>
+        <div class="nav-cats">
+            <div class="nav-cat">
+                <a href="#shipped" class="nav-cat-label" data-i18n="nav.shipped">Shipped Games</a>
+                <div class="nav-dropdown">
+                    <a href="projects/bricks-over-blocks.html">Bricks Over Blocks</a>
+                    <a href="projects/beamdown.html">Beamdown</a>
+                    <a href="projects/hampter-ball.html">Hampter Ball</a>
+                </div>
+            </div>
+            <div class="nav-cat">
+                <a href="#projects" class="nav-cat-label" data-i18n="nav.projects">Prototypes & Demos</a>
+                <div class="nav-dropdown">
+                    <a href="projects/greatsword.html" data-i18n="gs.title">Greatsword Combat System</a>
+                    <a href="projects/dungeons-and-drinks.html">Dungeons & Drinks</a>
+                    <a href="projects/remote-code-execution.html">Remote Code Execution</a>
+                    <a href="projects/level-design.html" data-i18n="ld.title">Level Design</a>
+                </div>
+            </div>
+            <a href="https://www.linkedin.com/in/yuxiao-zhang-dev" class="nav-link" target="_blank">LinkedIn</a>
+            <a href="mailto:z.yuxiao@icloud.com" class="nav-link">Email</a>
         </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
-    <header id="about">
-        <h1>Yuxiao (Shawn) Zhang</h1>
-        <p class="tagline">Technical Designer / Gamer</p>
-        <div class="bio">
-            <h2>About Me</h2>
-            <p>Hi there! Welcome to my site!</p>
-            <p>I'm a passionate game enthusiast eager to break into the industry and make a lasting impact.</p>
-            <p>My journey into gaming has a unique story—when I was younger, I had a special eye condition, and the doctor advised my parents to let me exercise my eyes more. That's how I got my first Game Boy and PC, and I've been hooked ever since!</p>
-            <p>Currently, I'm playing <a href="https://store.steampowered.com/app/1422450/Deadlock/">Deadlock</a> by Valve, which I believe is the ultimate evolution of hero shooter games.</p>
-        </div>
+    <header class="page-title">
+        <h1 data-i18n="page.name">Shawn Zhang</h1>
+        <p data-i18n="page.role">Combat Designer</p>
+        <button id="lang-toggle" class="lang-toggle" title="Switch language">中文</button>
     </header>
 
     <main>
-        <!-- Shipped Games -->
-        <section id="shipped-games">
-            <h2>Shipped Games</h2>
-            <div class="featured-grid">
-                <div class="featured-card">
-                    <div class="featured-media">
-                        <!-- Replace with screenshot or trailer GIF/video -->
-                        <div class="placeholder-img">Image Coming Soon</div>
-                    </div>
-                    <div class="featured-info">
+        <section id="shipped">
+            <h2 data-i18n="section.shipped">Shipped Games</h2>
+            <div class="card-grid">
+                <a id="bricks-over-blocks" href="projects/bricks-over-blocks.html" class="card">
+                    <div class="card-media"><div class="media-placeholder" data-i18n="placeholder.screenshot">Screenshot Coming Soon</div></div>
+                    <div class="card-body">
+                        <div class="tag-row">
+                            <span class="tag tag-platform">Steam</span>
+                            <span class="tag tag-engine">UE5</span>
+                            <span class="tag tag-role">Engineer / Designer</span>
+                        </div>
                         <h3>Bricks Over Blocks</h3>
-                        <div class="project-meta">
-                            <span class="badge badge-steam">Steam</span>
-                            <span class="badge badge-engine">Unreal Engine 5</span>
-                            <span class="badge badge-role">Engineer/UI</span>
-                        </div>
-                        <p>A creative building game developed with Unreal Engine 5. I worked on engineering and UI systems.</p>
-                        <div class="project-links">
-                            <a href="https://store.steampowered.com/app/3026400/Bricks_Over_Blocks/" class="btn btn-steam">View on Steam</a>
-                        </div>
+                        <p class="award-line" data-i18n="bob.award">IGDA SLC Game of the Year (2025)</p>
+                        <p data-i18n="bob.desc">Zero to Steam in 4 months, team of 8. Scoring system, real-time UI architecture, asset integration pipeline.</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="featured-card">
-                    <div class="featured-media">
-                        <!-- Replace with screenshot or trailer GIF/video -->
-                        <div class="placeholder-img">Image Coming Soon</div>
-                    </div>
-                    <div class="featured-info">
+                <a id="beamdown" href="projects/beamdown.html" class="card">
+                    <div class="card-media"><div class="media-placeholder" data-i18n="placeholder.screenshot">Screenshot Coming Soon</div></div>
+                    <div class="card-body">
+                        <div class="tag-row">
+                            <span class="tag tag-platform">Steam</span>
+                            <span class="tag tag-engine">Unity C#</span>
+                            <span class="tag tag-role">Engineer / Designer</span>
+                        </div>
                         <h3>Beamdown</h3>
-                        <div class="project-meta">
-                            <span class="badge badge-steam">Steam</span>
-                            <span class="badge badge-engine">Unity</span>
-                            <span class="badge badge-role">Engineer-UI</span>
-                        </div>
-                        <p>A fast-paced action game built with Unity. Contributed as a UI engineer.</p>
-                        <div class="project-links">
-                            <a href="https://store.steampowered.com/app/2935620/Beamdown/" class="btn btn-steam">View on Steam</a>
-                        </div>
+                        <p data-i18n="beamdown.desc">EAE Capstone, 30-person team. Full UI pipeline — backend and frontend in C#.</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="featured-card">
-                    <div class="featured-media">
-                        <img src="Images/HB.png" alt="Hampter Ball" loading="lazy">
-                    </div>
-                    <div class="featured-info">
+                <a id="hampter-ball" href="projects/hampter-ball.html" class="card">
+                    <div class="card-media"><img src="Images/HB.png" alt="Hampter Ball" loading="lazy"></div>
+                    <div class="card-body">
+                        <div class="tag-row">
+                            <span class="tag tag-platform">Itch.io</span>
+                            <span class="tag tag-engine">Unity</span>
+                            <span class="tag tag-role">Engineer / Designer</span>
+                        </div>
                         <h3>Hampter Ball</h3>
-                        <div class="project-meta">
-                            <span class="badge badge-itch">Itch.io</span>
-                            <span class="badge badge-engine">Unity</span>
-                            <span class="badge badge-role">Engineer/Designer</span>
-                        </div>
-                        <p>Fatten up and roll out! Roll your Hampter around to push off enemies and take your victory. Progress through tough stages in the bedroom of a child.</p>
-                        <div class="project-links">
-                            <a href="https://medium.com/@mdzzsb233/making-hampter-ball-9916cad3294f" class="btn">Write-up</a>
-                            <a href="https://almitytuhm.itch.io/hampter-ball" class="btn btn-itch">Play on Itch.io</a>
-                            <a href="play.html?game=hampter-ball" class="btn btn-primary">Play in Browser</a>
-                        </div>
+                        <p data-i18n="hb.desc">Roll your Hampter to push off enemies across tough stages.</p>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
 
-        <!-- Personal Projects -->
-        <section id="personal-projects">
-            <h2>Personal Projects</h2>
-            <div class="projects-container">
-                <div class="project">
-                    <div class="placeholder-img">In Development</div>
-                    <h3>Action Game (UE5 C++)</h3>
-                    <div class="project-meta">
-                        <span class="badge badge-wip">Work in Progress</span>
-                        <span class="badge badge-engine">Unreal Engine 5</span>
+        <section id="projects">
+            <h2 data-i18n="section.projects">Prototypes & Demos</h2>
+            <div class="card-grid">
+                <a id="greatsword" href="projects/greatsword.html" class="card">
+                    <div class="card-media"><div class="media-placeholder" data-i18n="placeholder.footage">Footage Coming Soon</div></div>
+                    <div class="card-body">
+                        <div class="tag-row">
+                            <span class="tag tag-engine">UE5 C++</span>
+                            <span class="tag tag-engine">GAS</span>
+                            <span class="tag tag-role">Solo Dev</span>
+                        </div>
+                        <h3 data-i18n="gs.title">Greatsword Combat System</h3>
+                        <p data-i18n="gs.desc">Dark Souls-inspired. 6 attack types, HitStop + CameraShake, Behavior Tree AI with stagger/knockback, GAS attributes. Built in 7 days.</p>
                     </div>
-                    <p>An action game being developed in Unreal Engine 5 using C++. Exploring advanced gameplay mechanics and combat systems.</p>
-                    <div class="project-links">
-                        <span class="btn btn-disabled">Coming Soon</span>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="placeholder-img">Image Coming Soon</div>
-                    <h3>UEFN Boss Fight</h3>
-                    <div class="project-meta">
-                        <span class="badge badge-engine">UEFN/Verse</span>
-                    </div>
-                    <p>A boss fight experience created using Unreal Editor for Fortnite and Verse scripting language.</p>
-                    <div class="project-links">
-                        <span class="btn btn-disabled">Details Coming</span>
-                    </div>
-                </div>
-                <div class="project">
-                    <div class="placeholder-img">Image Coming Soon</div>
-                    <h3>Dungeons & Drinks</h3>
-                    <div class="project-meta">
-                        <span class="badge badge-engine">Unity Mobile</span>
-                    </div>
-                    <p>A mobile game project built with Unity, featuring dungeon exploration mechanics.</p>
-                    <div class="project-links">
-                        <span class="btn btn-disabled">Details Coming</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+                </a>
 
-        <!-- Game Jam & Learning Projects -->
-        <section id="learning-projects">
-            <h2>Game Jam & Learning Projects</h2>
-            <div class="projects-container">
-                <div class="project">
-                    <img src="Images/Animal Ambiguity.png" alt="Animal Ambiguity" loading="lazy">
-                    <h3>Animal Ambiguity</h3>
-                    <div class="project-meta">
-                        <span class="badge badge-engine">Unity</span>
+                <a id="dungeons" href="projects/dungeons-and-drinks.html" class="card">
+                    <div class="card-media"><div class="media-placeholder" data-i18n="placeholder.screenshot">Screenshot Coming Soon</div></div>
+                    <div class="card-body">
+                        <div class="tag-row">
+                            <span class="tag tag-engine">Unity Mobile</span>
+                            <span class="tag tag-role">System Designer</span>
+                        </div>
+                        <h3 data-i18n="dnd.title">Dungeons & Drinks</h3>
+                        <p data-i18n="dnd.desc">F2P mobile. Full GDD, FTUE onboarding, monetization events. Led cross-discipline team.</p>
                     </div>
-                    <p>You are a raccoon who has stumbled upon a strange human book containing what appears to be a list of tasks. The most logical thing to do now is to do those tasks, which probably don't have additional interpretations...</p>
-                    <div class="project-links">
-                        <a href="Animal_Ambiguity.html" class="btn">Details</a>
-                        <a href="play.html?game=animal-ambiguity" class="btn btn-primary">Play in Browser</a>
-                    </div>
-                </div>
+                </a>
 
-                <div class="project">
-                    <img src="Images/Remote.JPG" alt="Remote Code Execution Game" loading="lazy">
-                    <h3>Remote Code Execution</h3>
-                    <div class="project-meta">
-                        <span class="badge badge-engine">Unity</span>
+                <a id="remote" href="projects/remote-code-execution.html" class="card">
+                    <div class="card-media"><img src="Images/Remote.JPG" alt="Remote Code Execution" loading="lazy"></div>
+                    <div class="card-body">
+                        <div class="tag-row"><span class="tag tag-engine">Unity</span></div>
+                        <h3 data-i18n="rce.title">Remote Code Execution</h3>
+                        <p data-i18n="rce.desc">Car hacking game. Press the right keys to regain control.</p>
                     </div>
-                    <p>Your car has been hacked. When a hacker takes control, a letter will appear on the screen. Press the corresponding key to regain control of your car.</p>
-                    <div class="project-links">
-                        <a href="https://medium.com/@mdzzsb233/test-5f57a531585c" class="btn">Write-up</a>
-                        <a href="play.html?game=remote" class="btn btn-primary">Play in Browser</a>
-                    </div>
-                </div>
+                </a>
 
-                <div class="project">
-                    <img src="Images/Scrappy_Squirrel.png" alt="Scrappy Squirrel" loading="lazy">
-                    <h3>Scrappy Squirrel</h3>
-                    <div class="project-meta">
-                        <span class="badge badge-engine">Unity</span>
+                <a id="level-design" href="projects/level-design.html" class="card">
+                    <div class="card-media"><img src="Images/Side Scroller.JPG" alt="Level Design" loading="lazy"></div>
+                    <div class="card-body">
+                        <div class="tag-row"><span class="tag tag-engine">Unity</span></div>
+                        <h3 data-i18n="ld.title">Level Design</h3>
+                        <p data-i18n="ld.desc">2D side scroller + 3D puzzle level.</p>
                     </div>
-                    <p>Winter is coming, and you're running out of time. Quickly gather as many acorns as you can to keep your family fed through the winter before the snow piles up too high.</p>
-                    <div class="project-links">
-                        <a href="Scrappy_Squirrel.html" class="btn">Details</a>
-                        <a href="play.html?game=scrappy-squirrel" class="btn btn-primary">Play in Browser</a>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <img src="Images/Side Scroller.JPG" alt="Level Design Projects" loading="lazy">
-                    <h3>Level Design Projects</h3>
-                    <div class="project-meta">
-                        <span class="badge badge-engine">Unity</span>
-                    </div>
-                    <p>A 2D side scroller and a 3D puzzle level made with Unity.</p>
-                    <div class="project-links">
-                        <a href="Side_Scroller.html" class="btn">Details</a>
-                        <a href="play.html?game=level-design-3d" class="btn btn-primary">Play 3D</a>
-                        <a href="play.html?game=side-scroller" class="btn btn-primary">Play 2D</a>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <img src="Images/cpp_GL.png" alt="OpenGL Game Engine" loading="lazy">
-                    <h3>My Journey Making a Game Engine</h3>
-                    <div class="project-meta">
-                        <span class="badge badge-engine">C++ / OpenGL</span>
-                    </div>
-                    <p>Making a game engine using C++ 14 and OpenGL 3.3 Core.</p>
-                    <div class="project-links">
-                        <span class="btn btn-disabled">Coming Soon</span>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <img src="Images/Frog.png" alt="3D Model Render" loading="lazy">
-                    <h3>A 3D Render of a Model</h3>
-                    <div class="project-meta">
-                        <span class="badge badge-engine">Maya / Three.js</span>
-                    </div>
-                    <p>A model I made using Maya, then rendered using three.js.</p>
-                    <div class="project-links">
-                        <a href="Model.html" class="btn btn-primary">View Model</a>
-                    </div>
-                </div>
+                </a>
             </div>
         </section>
     </main>
 
-    <footer id="contact">
-        <h2>Contact</h2>
-        <div class="contact-links">
-            <a href="https://www.linkedin.com/in/yuxiao-zhang-dev" class="btn">LinkedIn</a>
-            <a href="mailto:yuxiao.zhang@utah.edu" class="btn">Email Me</a>
-        </div>
-    </footer>
-
-    <script src="js/nav.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                const el = document.querySelector(this.getAttribute('href'));
+                if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+        const toggle = document.querySelector('.nav-toggle');
+        const cats = document.querySelector('.nav-cats');
+        toggle.addEventListener('click', () => { cats.classList.toggle('open'); toggle.classList.toggle('active'); });
+        cats.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { cats.classList.remove('open'); toggle.classList.remove('active'); }); });
+    </script>
+    <script src="js/i18n.js"></script>
 </body>
 </html>
