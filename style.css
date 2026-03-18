@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Nunito+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap');
 
 :root {
-    --color-primary: #6366f1;
-    --color-primary-hover: #818cf8;
-    --color-primary-glow: rgba(99, 102, 241, 0.25);
+    --color-primary: #dc2626;
+    --color-primary-hover: #ef4444;
+    --color-primary-glow: rgba(220, 38, 38, 0.25);
     --color-bg: #0c0c11;
     --color-surface: #141420;
     --color-card: #16161f;
@@ -30,8 +30,8 @@ body {
     line-height: 1.6;
     font-size: 15px;
     background:
-        radial-gradient(ellipse at 15% -10%, rgba(99, 102, 241, 0.08) 0%, transparent 55%),
-        radial-gradient(ellipse at 85% 110%, rgba(34, 211, 238, 0.04) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% -10%, rgba(220, 38, 38, 0.06) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 110%, rgba(245, 158, 11, 0.04) 0%, transparent 55%),
         var(--color-bg);
     color: var(--color-text);
     padding-top: var(--nav-height);
@@ -40,7 +40,7 @@ body {
 }
 
 a { color: var(--color-primary-hover); text-decoration: none; transition: color var(--transition); }
-a:hover { color: var(--color-accent); }
+a:hover { color: var(--color-primary-hover); }
 
 /* ===========================
    Nav
@@ -105,9 +105,10 @@ a.nav-name:hover { color: var(--color-primary-hover); }
 
 .nav-dropdown {
     position: absolute;
-    top: calc(var(--nav-height) - 2px);
+    top: 100%;
     left: 50%;
-    transform: translateX(-50%) translateY(6px);
+    transform: translateX(-50%) translateY(0);
+    padding-top: 4px;
     min-width: 220px;
     background: rgba(19, 19, 28, 0.95);
     backdrop-filter: blur(16px);
@@ -123,7 +124,6 @@ a.nav-name:hover { color: var(--color-primary-hover); }
 
 .nav-cat:hover .nav-dropdown {
     opacity: 1; visibility: visible;
-    transform: translateX(-50%) translateY(0);
 }
 
 .nav-dropdown a {
@@ -137,7 +137,7 @@ a.nav-name:hover { color: var(--color-primary-hover); }
     white-space: nowrap;
 }
 .nav-dropdown a:hover {
-    background: rgba(99, 102, 241, 0.1);
+    background: rgba(220, 38, 38, 0.1);
     color: var(--color-text);
     padding-left: 22px;
 }
@@ -155,27 +155,27 @@ a.nav-name:hover { color: var(--color-primary-hover); }
 }
 .nav-link:hover { color: var(--color-text); }
 
-/* Language toggle */
+/* Language toggle — nav position */
 .lang-toggle {
-    margin-top: 14px;
-    padding: 7px 24px;
+    padding: 4px 14px;
     font-family: 'Rajdhani', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    color: white;
-    background: linear-gradient(135deg, var(--color-primary), #4f46e5);
-    border: 1px solid rgba(129, 140, 248, 0.3);
+    color: var(--color-text-muted);
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.25);
     border-radius: 50px;
     cursor: pointer;
     transition: all var(--transition);
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    margin-left: 8px;
 }
 
 .lang-toggle:hover {
-    background: linear-gradient(135deg, var(--color-primary-hover), var(--color-primary));
-    transform: translateY(-1px);
-    box-shadow: 0 4px 20px var(--color-primary-glow);
+    color: white;
+    background: rgba(220, 38, 38, 0.25);
+    border-color: rgba(220, 38, 38, 0.4);
 }
 
 .nav-toggle {
@@ -266,7 +266,7 @@ section h2::after {
     left: 0;
     width: 36px;
     height: 2px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    background: linear-gradient(90deg, var(--color-primary), var(--color-gold));
     border-radius: 1px;
 }
 
@@ -277,6 +277,24 @@ section h2::after {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+}
+
+/* Featured card — first project gets hero treatment */
+.card-featured {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.card-featured .card-media {
+    aspect-ratio: 21 / 9;
+}
+
+.card-featured .card-body h3 {
+    font-size: 1.35rem;
+}
+
+.card-featured .card-body p {
+    font-size: 0.88rem;
 }
 
 /* ===========================
@@ -339,12 +357,29 @@ section h2::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #111118, #1a1a28);
-    color: var(--color-text-dim);
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 8px,
+            rgba(220, 38, 38, 0.03) 8px,
+            rgba(220, 38, 38, 0.03) 16px
+        ),
+        linear-gradient(135deg, #0e0e16, #161624);
+    color: transparent;
+    font-size: 0;
+    position: relative;
+}
+
+.media-placeholder::after {
+    content: '';
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--color-border);
+    border-radius: 6px;
+    opacity: 0.4;
+    background:
+        linear-gradient(135deg, transparent 40%, rgba(220, 38, 38, 0.15) 50%, transparent 60%);
 }
 
 .card-body {
@@ -404,9 +439,9 @@ section h2::after {
     letter-spacing: 0.06em;
 }
 
-.tag-platform { background: rgba(99, 102, 241, 0.12); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.18); }
-.tag-engine { background: rgba(255, 255, 255, 0.04); color: var(--color-text-muted); border: 1px solid rgba(255, 255, 255, 0.07); }
-.tag-role { background: rgba(34, 211, 238, 0.08); color: #67e8f9; border: 1px solid rgba(34, 211, 238, 0.12); }
+.tag-platform { background: rgba(220, 38, 38, 0.12); color: #fca5a5; border: 1px solid rgba(220, 38, 38, 0.22); }
+.tag-engine { background: rgba(245, 158, 11, 0.12); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.2); }
+.tag-role { background: rgba(255, 255, 255, 0.06); color: #d4d4e0; border: 1px solid rgba(255, 255, 255, 0.12); }
 
 /* ===========================
    Buttons
@@ -429,13 +464,13 @@ section h2::after {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--color-primary), #4f46e5);
-    border-color: rgba(129, 140, 248, 0.3);
+    background: linear-gradient(135deg, var(--color-primary), #b91c1c);
+    border-color: rgba(239, 68, 68, 0.3);
     color: white;
 }
 .btn-primary:hover {
     background: linear-gradient(135deg, var(--color-primary-hover), var(--color-primary));
-    border-color: rgba(129, 140, 248, 0.5);
+    border-color: rgba(239, 68, 68, 0.5);
     color: white;
     box-shadow: 0 4px 20px var(--color-primary-glow);
 }
@@ -476,7 +511,7 @@ section h2::after {
     background: linear-gradient(
         135deg,
         transparent 30%,
-        rgba(99, 102, 241, 0.4) 50%,
+        rgba(220, 38, 38, 0.4) 50%,
         transparent 70%
     );
     background-size: 300% 300%;
@@ -575,14 +610,7 @@ section.scroll-reveal {
     margin-top: 16px;
 }
 
-.detail-content .lang-toggle {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 999;
-    margin-top: 0;
-    box-shadow: 0 4px 24px var(--color-primary-glow);
-}
+/* On sub pages, lang toggle is in the nav area — no special override needed */
 
 .detail-content {
     max-width: 860px;
@@ -636,6 +664,56 @@ section.scroll-reveal {
     height: 2px;
     background: var(--color-primary);
     border-radius: 1px;
+}
+
+/* Callout box for key info on detail pages */
+.detail-callout {
+    background: rgba(220, 38, 38, 0.06);
+    border: 1px solid rgba(220, 38, 38, 0.15);
+    border-left: 3px solid var(--color-primary);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+}
+
+.detail-callout p {
+    color: var(--color-text) !important;
+    font-size: 0.88rem !important;
+    margin-bottom: 0 !important;
+}
+
+/* Stat grid for project info */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    text-align: center;
+}
+
+.stat-item .stat-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    color: var(--color-text);
+    letter-spacing: 0.04em;
+    display: block;
+}
+
+.stat-item .stat-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.7rem;
+    color: var(--color-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+    display: block;
 }
 
 .detail-media {
@@ -692,6 +770,8 @@ section.scroll-reveal {
    =========================== */
 @media (max-width: 960px) {
     .card-grid { grid-template-columns: repeat(2, 1fr); }
+    .card-featured { grid-column: span 2; }
+    .card-featured .card-media { aspect-ratio: 2 / 1; }
     .page-title h1 { font-size: 3.2rem; }
 }
 
@@ -738,7 +818,10 @@ section.scroll-reveal {
     .page-title { padding: 40px 20px 12px; }
 
     .card-grid { grid-template-columns: 1fr; }
+    .card-featured { grid-column: span 1; }
+    .card-featured .card-media { aspect-ratio: 16 / 9; }
     .detail-media-grid { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: 1fr; }
 
     .detail-header h1 { font-size: 2rem; }
 }

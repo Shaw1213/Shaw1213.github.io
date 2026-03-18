@@ -117,10 +117,10 @@
 
             if (e.type < 0.5) {
                 /* Orange ember */
-                r = 255; g = Math.round(140 + e.life * 60); b = 50;
+                r = 255; g = Math.round(120 + e.life * 50); b = 30;
             } else if (e.type < 0.8) {
-                /* Indigo ember */
-                r = 129; g = 140; b = 248;
+                /* Crimson ember */
+                r = 220; g = 38; b = 38;
             } else {
                 /* Gold ember */
                 r = 245; g = 158; b = 11;
@@ -151,9 +151,9 @@
             ctx.lineTo(sl.x2, sl.y2);
 
             var grad = ctx.createLinearGradient(sl.x1, sl.y1, sl.x2, sl.y2);
-            grad.addColorStop(0, 'rgba(99, 102, 241, ' + (sl.life * 0.1) + ')');
-            grad.addColorStop(0.5, 'rgba(129, 140, 248, ' + (sl.life * 0.7) + ')');
-            grad.addColorStop(1, 'rgba(34, 211, 238, ' + (sl.life * 0.3) + ')');
+            grad.addColorStop(0, 'rgba(220, 38, 38, ' + (sl.life * 0.1) + ')');
+            grad.addColorStop(0.5, 'rgba(239, 68, 68, ' + (sl.life * 0.7) + ')');
+            grad.addColorStop(1, 'rgba(245, 158, 11, ' + (sl.life * 0.3) + ')');
 
             ctx.strokeStyle = grad;
             ctx.lineWidth = sl.width * sl.life;
@@ -161,7 +161,7 @@
             ctx.stroke();
 
             /* Slash glow */
-            ctx.strokeStyle = 'rgba(129, 140, 248, ' + (sl.life * 0.15) + ')';
+            ctx.strokeStyle = 'rgba(239, 68, 68, ' + (sl.life * 0.15) + ')';
             ctx.lineWidth = sl.width * sl.life * 4;
             ctx.stroke();
         }
@@ -177,7 +177,7 @@
 
             var sr, sg, sb;
             if (sp.color === 'primary') {
-                sr = 129; sg = 140; sb = 248;
+                sr = 239; sg = 68; sb = 68;
             } else {
                 sr = 245; sg = 180; sb = 50;
             }
@@ -212,10 +212,10 @@
 
                 var alpha2 = (1 - p) * 0.8;
                 var grd = ctx.createLinearGradient(sx, sy, cx, cy);
-                grd.addColorStop(0, 'rgba(99, 102, 241, 0)');
-                grd.addColorStop(0.3, 'rgba(129, 140, 248, ' + alpha2 + ')');
+                grd.addColorStop(0, 'rgba(220, 38, 38, 0)');
+                grd.addColorStop(0.3, 'rgba(239, 68, 68, ' + alpha2 + ')');
                 grd.addColorStop(0.7, 'rgba(255, 255, 255, ' + (alpha2 * 0.9) + ')');
-                grd.addColorStop(1, 'rgba(34, 211, 238, ' + (alpha2 * 0.6) + ')');
+                grd.addColorStop(1, 'rgba(245, 158, 11, ' + (alpha2 * 0.6) + ')');
 
                 ctx.strokeStyle = grd;
                 ctx.lineWidth = 3 * (1 - p);
@@ -223,7 +223,7 @@
                 ctx.stroke();
 
                 /* Slash glow */
-                ctx.strokeStyle = 'rgba(129, 140, 248, ' + (alpha2 * 0.2) + ')';
+                ctx.strokeStyle = 'rgba(239, 68, 68, ' + (alpha2 * 0.2) + ')';
                 ctx.lineWidth = 20 * (1 - p);
                 ctx.stroke();
 

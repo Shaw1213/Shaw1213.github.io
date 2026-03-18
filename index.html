@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shawn Zhang - Combat Designer</title>
+    <meta name="description" content="Combat Designer portfolio. Shipped 2 Steam titles. Specialized in melee combat systems, gameplay design, and UE5/Unity development.">
+    <meta property="og:title" content="Shawn Zhang - Combat Designer">
+    <meta property="og:description" content="Combat Designer portfolio. Shipped 2 Steam titles. Specialized in melee combat systems and gameplay design.">
+    <meta property="og:image" content="https://yuxiaozhang.com/Images/bob-title.png">
+    <meta property="og:url" content="https://yuxiaozhang.com">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23dc2626'/><text x='16' y='22' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'>SZ</text></svg>">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,22 +18,11 @@
     <nav class="top-nav">
         <span class="nav-name">Shawn Zhang <span class="nav-title" data-i18n="nav.title">Combat Designer</span></span>
         <div class="nav-cats">
-            <div class="nav-cat">
-                <a href="#works" class="nav-cat-label" data-i18n="nav.works">Projects</a>
-                <div class="nav-dropdown">
-                    <a href="projects/greatsword.html" data-i18n="gs.title">Greatsword Combat System</a>
-                    <a href="projects/beamdown.html">Beamdown</a>
-                    <a href="projects/bricks-over-blocks.html">Bricks Over Blocks</a>
-                    <a href="projects/dungeons-and-drinks.html">Dungeons & Drinks</a>
-                    <a href="projects/hampter-ball.html">Hampter Ball</a>
-                    <a href="projects/remote-code-execution.html">Remote Code Execution</a>
-                    <a href="projects/level-design.html" data-i18n="ld.title">Level Design</a>
-                </div>
-            </div>
             <a href="projects/about.html" class="nav-link">About</a>
             <a href="https://www.linkedin.com/in/yuxiao-zhang-dev" class="nav-link" target="_blank">LinkedIn</a>
             <a href="mailto:z.yuxiao@icloud.com" class="nav-link">Email</a>
         </div>
+        <button id="lang-toggle" class="lang-toggle" title="Switch language">中文</button>
         <button class="nav-toggle" aria-label="Toggle navigation">
             <span></span><span></span><span></span>
         </button>
@@ -35,14 +31,12 @@
     <header class="page-title">
         <h1 data-i18n="page.name">Shawn Zhang</h1>
         <p data-i18n="page.role">Combat Designer</p>
-        <button id="lang-toggle" class="lang-toggle" title="Switch language">中文</button>
     </header>
 
     <main>
         <section id="works">
-            <h2 data-i18n="section.works">Projects</h2>
             <div class="card-grid">
-                <a id="greatsword" href="projects/greatsword.html" class="card" style="--i:0">
+                <a id="greatsword" href="projects/greatsword.html" class="card card-featured" style="--i:0">
                     <div class="card-media"><div class="media-placeholder" data-i18n="placeholder.footage">Footage Coming Soon</div></div>
                     <div class="card-body">
                         <div class="tag-row">
@@ -74,7 +68,7 @@
                     <div class="card-body">
                         <div class="tag-row">
                             <span class="tag tag-platform">Steam</span>
-                            <span class="tag tag-engine">UE5</span>
+                            <span class="tag tag-engine">UE5 Blueprint</span>
                             <span class="tag tag-role">Engineer / Designer</span>
                         </div>
                         <h3>Bricks Over Blocks</h3>
@@ -83,7 +77,21 @@
                     </div>
                 </a>
 
-                <a id="dungeons" href="projects/dungeons-and-drinks.html" class="card" style="--i:3">
+                <a id="hampter-ball" href="projects/hampter-ball.html" class="card" style="--i:3">
+                    <div class="card-media"><img src="Images/HB.png" alt="Hampter Ball" loading="lazy"></div>
+                    <div class="card-body">
+                        <div class="tag-row">
+                            <span class="tag tag-platform">Game Jam</span>
+                            <span class="tag tag-platform">Itch.io</span>
+                            <span class="tag tag-engine">Unity</span>
+                            <span class="tag tag-role">Engineer / Designer</span>
+                        </div>
+                        <h3>Hampter Ball</h3>
+                        <p data-i18n="hb.desc">Roll your Hampter to push off enemies across tough stages.</p>
+                    </div>
+                </a>
+
+                <a id="dungeons" href="projects/dungeons-and-drinks.html" class="card" style="--i:4">
                     <div class="card-media"><div class="media-placeholder" data-i18n="placeholder.screenshot">Screenshot Coming Soon</div></div>
                     <div class="card-body">
                         <div class="tag-row">
@@ -96,24 +104,11 @@
                     </div>
                 </a>
 
-                <a id="hampter-ball" href="projects/hampter-ball.html" class="card" style="--i:4">
-                    <div class="card-media"><img src="Images/HB.png" alt="Hampter Ball" loading="lazy"></div>
-                    <div class="card-body">
-                        <div class="tag-row">
-                            <span class="tag tag-platform">Itch.io</span>
-                            <span class="tag tag-engine">Unity</span>
-                            <span class="tag tag-role">Engineer / Designer</span>
-                        </div>
-                        <h3>Hampter Ball</h3>
-                        <p data-i18n="hb.desc">Roll your Hampter to push off enemies across tough stages.</p>
-                    </div>
-                </a>
-
                 <a id="remote" href="projects/remote-code-execution.html" class="card" style="--i:5">
                     <div class="card-media"><img src="Images/Remote.JPG" alt="Remote Code Execution" loading="lazy"></div>
                     <div class="card-body">
                         <div class="tag-row">
-                            <span class="tag tag-platform">Game Jam</span>
+                            <span class="tag tag-platform">Course Project</span>
                             <span class="tag tag-engine">Unity</span>
                         </div>
                         <h3 data-i18n="rce.title">Remote Code Execution</h3>

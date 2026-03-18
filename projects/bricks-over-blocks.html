@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bricks Over Blocks - Shawn Zhang</title>
+    <meta name="description" content="Shawn Zhang - Combat Designer portfolio. Shipped 2 Steam titles. Specialized in melee combat systems and gameplay design.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23dc2626'/><text x='16' y='22' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'>SZ</text></svg>">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -26,6 +28,7 @@
             </div>
             <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
         </div>
+        <button id="lang-toggle" class="lang-toggle" title="Switch language">中文</button>
         <button class="nav-toggle" aria-label="Toggle navigation">
             <span></span><span></span><span></span>
         </button>
@@ -54,12 +57,20 @@
         </section>
 
         <section class="detail-section">
-            <h2 data-i18n="bob.detail.info">Project Info</h2>
-            <ul>
-                <li data-i18n="bob.detail.engine"><strong>Engine:</strong> Unreal Engine 5.4 (Blueprint Only)</li>
-                <li data-i18n="bob.detail.team"><strong>Team:</strong> 2 Engineers, 2 Designers, 3 Artists, 1 Sound Designer</li>
-                <li data-i18n="bob.detail.duration"><strong>Duration:</strong> 4 Months</li>
-            </ul>
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <span class="stat-value">UE5</span>
+                    <span class="stat-label">Blueprint</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">8</span>
+                    <span class="stat-label" data-i18n="bob.detail.team.label">Team Members</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" data-i18n="bob.detail.duration.val">4 Months</span>
+                    <span class="stat-label" data-i18n="bob.detail.duration.label">Development</span>
+                </div>
+            </div>
         </section>
 
         <section class="detail-section">
@@ -77,22 +88,25 @@
             <p data-i18n="bob.detail.gameplay.p1">Bricks Over Blocks is an action-breakout game that fuses classic brick breaker with side-scrolling platformer controls. We redesigned the traditional fixed 1D paddle into a freely movable, jumping physics character with a bounce pad on its head. This expands the player's control from simple left-right movement to full 2D space, shifting the experience from "breakout" to "action game."</p>
             <p data-i18n="bob.detail.gameplay.p2">The core design tension comes from the ball trajectory being both an offensive tool and a defensive risk. Players guide the ball by moving when they catch it, aiming upward to destroy bricks. But the ball also shatters the floor bricks beneath the player — below the floor is lava, and falling means losing a life. Once floor bricks are destroyed they don't regenerate, so the player's safe space shrinks as the game progresses, error tolerance steadily decreases, creating ever-escalating tension.</p>
             <div class="detail-media">
-                <img src="../Images/bob-gameplay2.gif" alt="Floor destruction gameplay">
+                <video autoplay loop muted playsinline><source src="../Images/bob-gameplay2.mp4" type="video/mp4"></video>
             </div>
-            <p data-i18n="bob.detail.gameplay.p3">Skilled players can simultaneously attack and protect themselves through precise ball catches, while average players are forced to choose between "clearing bricks above" and "preserving the floor below" — this forms the core strategic trade-off of the game.</p>
+            <div class="detail-callout">
+                <p data-i18n="bob.detail.gameplay.p3">Skilled players can simultaneously attack and protect themselves through precise ball catches, while average players are forced to choose between "clearing bricks above" and "preserving the floor below" — this forms the core strategic trade-off of the game.</p>
+            </div>
         </section>
 
         <section class="detail-section">
             <h2 data-i18n="bob.detail.paddle">Life-Paddle Link Mechanic</h2>
             <p data-i18n="bob.detail.paddle.p1">I designed a risk-reward mechanic that binds the life system to player control ability: when a player gains an extra life by breaking a special brick that randomly appears in the level, the bounce pad on the character's head doubles in length, significantly increasing catch tolerance. But when the player makes a mistake and loses that extra life, the pad shrinks back to its original size.</p>
             <div class="detail-media">
-                <img src="../Images/bob-paddle.gif" alt="Paddle extension mechanic">
+                <video autoplay loop muted playsinline><source src="../Images/bob-paddle.mp4" type="video/mp4"></video>
             </div>
-            <p data-i18n="bob.detail.paddle.p2">This means a single mistake causes double punishment — losing both a life and the control advantage. This design gives players a clear sense of safety while holding the buff, and the drop-off when losing it amplifies tension and regret, creating a pronounced emotional rhythm throughout gameplay.</p>
+            <div class="detail-callout">
+                <p data-i18n="bob.detail.paddle.p2">This means a single mistake causes double punishment — losing both a life and the control advantage. This design gives players a clear sense of safety while holding the buff, and the drop-off when losing it amplifies tension and regret, creating a pronounced emotional rhythm throughout gameplay.</p>
+            </div>
         </section>
     </main>
 
-    <button id="lang-toggle" class="lang-toggle" title="Switch language">中文</button>
     <script>
         const toggle = document.querySelector('.nav-toggle');
         const cats = document.querySelector('.nav-cats');
