@@ -12,18 +12,13 @@
         <span class="nav-name">Shawn Zhang <span class="nav-title" data-i18n="nav.title">Combat Designer</span></span>
         <div class="nav-cats">
             <div class="nav-cat">
-                <a href="#shipped" class="nav-cat-label" data-i18n="nav.shipped">Shipped Games</a>
-                <div class="nav-dropdown">
-                    <a href="projects/bricks-over-blocks.html">Bricks Over Blocks</a>
-                    <a href="projects/beamdown.html">Beamdown</a>
-                    <a href="projects/hampter-ball.html">Hampter Ball</a>
-                </div>
-            </div>
-            <div class="nav-cat">
-                <a href="#projects" class="nav-cat-label" data-i18n="nav.projects">Prototypes & Demos</a>
+                <a href="#works" class="nav-cat-label" data-i18n="nav.works">Projects</a>
                 <div class="nav-dropdown">
                     <a href="projects/greatsword.html" data-i18n="gs.title">Greatsword Combat System</a>
+                    <a href="projects/beamdown.html">Beamdown</a>
+                    <a href="projects/bricks-over-blocks.html">Bricks Over Blocks</a>
                     <a href="projects/dungeons-and-drinks.html">Dungeons & Drinks</a>
+                    <a href="projects/hampter-ball.html">Hampter Ball</a>
                     <a href="projects/remote-code-execution.html">Remote Code Execution</a>
                     <a href="projects/level-design.html" data-i18n="ld.title">Level Design</a>
                 </div>
@@ -44,20 +39,20 @@
     </header>
 
     <main>
-        <section id="shipped">
-            <h2 data-i18n="section.shipped">Shipped Games</h2>
+        <section id="works">
+            <h2 data-i18n="section.works">Projects</h2>
             <div class="card-grid">
-                <a id="bricks-over-blocks" href="projects/bricks-over-blocks.html" class="card" style="--i:0">
-                    <div class="card-media"><div class="media-placeholder" data-i18n="placeholder.screenshot">Screenshot Coming Soon</div></div>
+                <a id="greatsword" href="projects/greatsword.html" class="card" style="--i:0">
+                    <div class="card-media"><div class="media-placeholder" data-i18n="placeholder.footage">Footage Coming Soon</div></div>
                     <div class="card-body">
                         <div class="tag-row">
-                            <span class="tag tag-platform">Steam</span>
-                            <span class="tag tag-engine">UE5</span>
-                            <span class="tag tag-role">Engineer / Designer</span>
+                            <span class="tag tag-platform">Demo</span>
+                            <span class="tag tag-engine">UE5 C++</span>
+                            <span class="tag tag-engine">GAS</span>
+                            <span class="tag tag-role">Solo Dev</span>
                         </div>
-                        <h3>Bricks Over Blocks</h3>
-                        <p class="award-line" data-i18n="bob.award">IGDA SLC Game of the Year (2025)</p>
-                        <p data-i18n="bob.desc">Zero to Steam in 4 months, team of 8. Scoring system, real-time UI architecture, asset integration pipeline.</p>
+                        <h3 data-i18n="gs.title">Greatsword Combat System</h3>
+                        <p data-i18n="gs.desc">Dark Souls-inspired. 6 attack types, HitStop + CameraShake, Behavior Tree AI with stagger/knockback, GAS attributes. Built in 7 days.</p>
                     </div>
                 </a>
 
@@ -74,7 +69,34 @@
                     </div>
                 </a>
 
-                <a id="hampter-ball" href="projects/hampter-ball.html" class="card" style="--i:2">
+                <a id="bricks-over-blocks" href="projects/bricks-over-blocks.html" class="card" style="--i:2">
+                    <div class="card-media"><img src="Images/bob-title.png" alt="Bricks Over Blocks" loading="lazy"></div>
+                    <div class="card-body">
+                        <div class="tag-row">
+                            <span class="tag tag-platform">Steam</span>
+                            <span class="tag tag-engine">UE5</span>
+                            <span class="tag tag-role">Engineer / Designer</span>
+                        </div>
+                        <h3>Bricks Over Blocks</h3>
+                        <p class="award-line" data-i18n="bob.award">IGDA SLC Game of the Year (2025)</p>
+                        <p data-i18n="bob.desc">Zero to Steam in 4 months, team of 8. Scoring system, real-time UI architecture, asset integration pipeline.</p>
+                    </div>
+                </a>
+
+                <a id="dungeons" href="projects/dungeons-and-drinks.html" class="card" style="--i:3">
+                    <div class="card-media"><div class="media-placeholder" data-i18n="placeholder.screenshot">Screenshot Coming Soon</div></div>
+                    <div class="card-body">
+                        <div class="tag-row">
+                            <span class="tag tag-platform">Course Project</span>
+                            <span class="tag tag-engine">Unity Mobile</span>
+                            <span class="tag tag-role">System Designer</span>
+                        </div>
+                        <h3 data-i18n="dnd.title">Dungeons & Drinks</h3>
+                        <p data-i18n="dnd.desc">F2P mobile. Full GDD, FTUE onboarding, monetization events. Led cross-discipline team.</p>
+                    </div>
+                </a>
+
+                <a id="hampter-ball" href="projects/hampter-ball.html" class="card" style="--i:4">
                     <div class="card-media"><img src="Images/HB.png" alt="Hampter Ball" loading="lazy"></div>
                     <div class="card-body">
                         <div class="tag-row">
@@ -86,50 +108,26 @@
                         <p data-i18n="hb.desc">Roll your Hampter to push off enemies across tough stages.</p>
                     </div>
                 </a>
-            </div>
-        </section>
 
-        <section id="projects" class="scroll-reveal">
-            <h2 data-i18n="section.projects">Prototypes & Demos</h2>
-            <div class="card-grid">
-                <a id="greatsword" href="projects/greatsword.html" class="card" style="--i:0">
-                    <div class="card-media"><div class="media-placeholder" data-i18n="placeholder.footage">Footage Coming Soon</div></div>
-                    <div class="card-body">
-                        <div class="tag-row">
-                            <span class="tag tag-engine">UE5 C++</span>
-                            <span class="tag tag-engine">GAS</span>
-                            <span class="tag tag-role">Solo Dev</span>
-                        </div>
-                        <h3 data-i18n="gs.title">Greatsword Combat System</h3>
-                        <p data-i18n="gs.desc">Dark Souls-inspired. 6 attack types, HitStop + CameraShake, Behavior Tree AI with stagger/knockback, GAS attributes. Built in 7 days.</p>
-                    </div>
-                </a>
-
-                <a id="dungeons" href="projects/dungeons-and-drinks.html" class="card" style="--i:1">
-                    <div class="card-media"><div class="media-placeholder" data-i18n="placeholder.screenshot">Screenshot Coming Soon</div></div>
-                    <div class="card-body">
-                        <div class="tag-row">
-                            <span class="tag tag-engine">Unity Mobile</span>
-                            <span class="tag tag-role">System Designer</span>
-                        </div>
-                        <h3 data-i18n="dnd.title">Dungeons & Drinks</h3>
-                        <p data-i18n="dnd.desc">F2P mobile. Full GDD, FTUE onboarding, monetization events. Led cross-discipline team.</p>
-                    </div>
-                </a>
-
-                <a id="remote" href="projects/remote-code-execution.html" class="card" style="--i:2">
+                <a id="remote" href="projects/remote-code-execution.html" class="card" style="--i:5">
                     <div class="card-media"><img src="Images/Remote.JPG" alt="Remote Code Execution" loading="lazy"></div>
                     <div class="card-body">
-                        <div class="tag-row"><span class="tag tag-engine">Unity</span></div>
+                        <div class="tag-row">
+                            <span class="tag tag-platform">Game Jam</span>
+                            <span class="tag tag-engine">Unity</span>
+                        </div>
                         <h3 data-i18n="rce.title">Remote Code Execution</h3>
                         <p data-i18n="rce.desc">Car hacking game. Press the right keys to regain control.</p>
                     </div>
                 </a>
 
-                <a id="level-design" href="projects/level-design.html" class="card" style="--i:3">
+                <a id="level-design" href="projects/level-design.html" class="card" style="--i:6">
                     <div class="card-media"><img src="Images/Side Scroller.JPG" alt="Level Design" loading="lazy"></div>
                     <div class="card-body">
-                        <div class="tag-row"><span class="tag tag-engine">Unity</span></div>
+                        <div class="tag-row">
+                            <span class="tag tag-platform">Course Project</span>
+                            <span class="tag tag-engine">Unity</span>
+                        </div>
                         <h3 data-i18n="ld.title">Level Design</h3>
                         <p data-i18n="ld.desc">2D side scroller + 3D puzzle level.</p>
                     </div>

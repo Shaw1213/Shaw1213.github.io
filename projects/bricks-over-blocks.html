@@ -11,25 +11,20 @@
     <nav class="top-nav">
         <a href="../" class="nav-name">Shawn Zhang <span class="nav-title">Combat Designer</span></a>
         <div class="nav-cats">
-            <a href="../" class="nav-link">Home</a>
+            <a href="../" class="nav-link" data-i18n="nav.home">Home</a>
             <div class="nav-cat">
-                <span class="nav-cat-label">Shipped Games</span>
+                <span class="nav-cat-label" data-i18n="nav.works">Projects</span>
                 <div class="nav-dropdown">
-                    <a href="bricks-over-blocks.html">Bricks Over Blocks</a>
+                    <a href="greatsword.html" data-i18n="nav.dd.greatsword">Greatsword Combat System</a>
                     <a href="beamdown.html">Beamdown</a>
-                    <a href="hampter-ball.html">Hampter Ball</a>
-                </div>
-            </div>
-            <div class="nav-cat">
-                <span class="nav-cat-label">Prototypes & Demos</span>
-                <div class="nav-dropdown">
-                    <a href="greatsword.html">Greatsword Combat System</a>
+                    <a href="bricks-over-blocks.html">Bricks Over Blocks</a>
                     <a href="dungeons-and-drinks.html">Dungeons & Drinks</a>
+                    <a href="hampter-ball.html">Hampter Ball</a>
                     <a href="remote-code-execution.html">Remote Code Execution</a>
-                    <a href="level-design.html">Level Design</a>
+                    <a href="level-design.html" data-i18n="nav.dd.level">Level Design</a>
                 </div>
             </div>
-            <a href="about.html" class="nav-link">About</a>
+            <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
         </div>
         <button class="nav-toggle" aria-label="Toggle navigation">
             <span></span><span></span><span></span>
@@ -37,36 +32,63 @@
     </nav>
 
     <main class="detail-content">
-        <a href="../" class="detail-back">&larr; Back to Portfolio</a>
+        <a href="../" class="detail-back" data-i18n="nav.back">&larr; Back to Portfolio</a>
 
         <header class="detail-header">
             <div class="tag-row">
                 <span class="tag tag-platform">Steam</span>
-                <span class="tag tag-engine">UE5</span>
+                <span class="tag tag-engine">UE5 Blueprint</span>
                 <span class="tag tag-role">Engineer / Designer</span>
             </div>
             <h1>Bricks Over Blocks</h1>
-            <p>IGDA SLC Game of the Year (2025). Zero to Steam in 4 months with an 8-person team at WalterNet Games.</p>
+            <p data-i18n="bob.detail.desc">IGDA SLC Game of the Year (2025). Zero to Steam in 4 months with an 8-person team at WalterNet Games.</p>
+            <div class="detail-actions">
+                <a href="https://store.steampowered.com/app/3026400/Bricks_Over_Blocks/" class="btn btn-primary" target="_blank">Steam Page</a>
+            </div>
         </header>
 
         <section class="detail-section">
-            <h2>Overview</h2>
-            <p><!-- Add your project overview here --></p>
+            <div class="detail-media">
+                <img src="../Images/bob-title.png" alt="Bricks Over Blocks">
+            </div>
         </section>
 
         <section class="detail-section">
-            <h2>My Contributions</h2>
+            <h2 data-i18n="bob.detail.info">Project Info</h2>
             <ul>
-                <li>Scoring system</li>
-                <li>Real-time UI architecture</li>
-                <li>Asset integration pipeline</li>
-                <!-- Add more contributions -->
+                <li data-i18n="bob.detail.engine"><strong>Engine:</strong> Unreal Engine 5.4 (Blueprint Only)</li>
+                <li data-i18n="bob.detail.team"><strong>Team:</strong> 2 Engineers, 2 Designers, 3 Artists, 1 Sound Designer</li>
+                <li data-i18n="bob.detail.duration"><strong>Duration:</strong> 4 Months</li>
             </ul>
         </section>
 
         <section class="detail-section">
-            <h2>Media</h2>
-            <!-- Add images, GIFs, or videos -->
+            <h2 data-i18n="bob.detail.contrib">My Contributions</h2>
+            <ul>
+                <li data-i18n="bob.detail.c1"><strong>Designed & Implemented Power-ups:</strong> Created 3 unique power-up mechanics to drive gameplay variety.</li>
+                <li data-i18n="bob.detail.c2"><strong>Core Systems Engineering:</strong> Co-developed the scoring system and Game State lifecycle management.</li>
+                <li data-i18n="bob.detail.c3"><strong>Asset Pipeline:</strong> Collaborated with Artists to integrate 3D assets and animations into the engine.</li>
+                <li data-i18n="bob.detail.c4"><strong>UI Ownership:</strong> Designed and implemented the full HUD and Menu interface widgets.</li>
+            </ul>
+        </section>
+
+        <section class="detail-section">
+            <h2 data-i18n="bob.detail.gameplay">Core Gameplay Design</h2>
+            <p data-i18n="bob.detail.gameplay.p1">Bricks Over Blocks is an action-breakout game that fuses classic brick breaker with side-scrolling platformer controls. We redesigned the traditional fixed 1D paddle into a freely movable, jumping physics character with a bounce pad on its head. This expands the player's control from simple left-right movement to full 2D space, shifting the experience from "breakout" to "action game."</p>
+            <p data-i18n="bob.detail.gameplay.p2">The core design tension comes from the ball trajectory being both an offensive tool and a defensive risk. Players guide the ball by moving when they catch it, aiming upward to destroy bricks. But the ball also shatters the floor bricks beneath the player — below the floor is lava, and falling means losing a life. Once floor bricks are destroyed they don't regenerate, so the player's safe space shrinks as the game progresses, error tolerance steadily decreases, creating ever-escalating tension.</p>
+            <div class="detail-media">
+                <img src="../Images/bob-gameplay2.gif" alt="Floor destruction gameplay">
+            </div>
+            <p data-i18n="bob.detail.gameplay.p3">Skilled players can simultaneously attack and protect themselves through precise ball catches, while average players are forced to choose between "clearing bricks above" and "preserving the floor below" — this forms the core strategic trade-off of the game.</p>
+        </section>
+
+        <section class="detail-section">
+            <h2 data-i18n="bob.detail.paddle">Life-Paddle Link Mechanic</h2>
+            <p data-i18n="bob.detail.paddle.p1">I designed a risk-reward mechanic that binds the life system to player control ability: when a player gains an extra life by breaking a special brick that randomly appears in the level, the bounce pad on the character's head doubles in length, significantly increasing catch tolerance. But when the player makes a mistake and loses that extra life, the pad shrinks back to its original size.</p>
+            <div class="detail-media">
+                <img src="../Images/bob-paddle.gif" alt="Paddle extension mechanic">
+            </div>
+            <p data-i18n="bob.detail.paddle.p2">This means a single mistake causes double punishment — losing both a life and the control advantage. This design gives players a clear sense of safety while holding the buff, and the drop-off when losing it amplifies tension and regret, creating a pronounced emotional rhythm throughout gameplay.</p>
         </section>
     </main>
 
