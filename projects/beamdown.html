@@ -41,29 +41,152 @@
             <div class="tag-row">
                 <span class="tag tag-platform">Steam</span>
                 <span class="tag tag-engine">Unity C#</span>
-                <span class="tag tag-role">Engineer / Designer</span>
+                <span class="tag tag-role">Boss Combat Designer / UI</span>
             </div>
-            <h1>Beamdown</h1>
-            <p>EAE Capstone project. 30-person team. Full UI pipeline — backend and frontend in C#.</p>
+            <h1>Beamdown — Boss 1: Berserk Pulse Tank</h1>
+            <p data-i18n="bd.detail.desc">University of Utah EAE Capstone. 30-person team. Shipped on Steam. I designed the complete Boss 1 combat encounter and implemented the full UI pipeline.</p>
+            <div class="detail-actions">
+                <a href="https://store.steampowered.com/app/3466230/Beamdown/" class="btn btn-primary" target="_blank">Steam Page</a>
+            </div>
         </header>
 
         <section class="detail-section">
-            <h2>Overview</h2>
-            <p><!-- Add your project overview here --></p>
+            <div class="detail-media">
+                <img src="../Images/bd-header.jpg" alt="Beamdown">
+            </div>
         </section>
 
         <section class="detail-section">
-            <h2>My Contributions</h2>
-            <ul>
-                <li>Full UI pipeline development</li>
-                <li>Combat combo design</li>
-                <!-- Add more contributions -->
-            </ul>
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <span class="stat-value">Unity C#</span>
+                    <span class="stat-label">Engine</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">30</span>
+                    <span class="stat-label" data-i18n="bd.detail.team.label">Team Members</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" data-i18n="bd.detail.role.val">Boss 1 Design + UI</span>
+                    <span class="stat-label" data-i18n="bd.detail.role.label">My Role</span>
+                </div>
+            </div>
         </section>
 
         <section class="detail-section">
-            <h2>Media</h2>
-            <!-- Add images, GIFs, or videos -->
+            <h2 data-i18n="bd.detail.goal">Design Goal</h2>
+            <p data-i18n="bd.detail.goal.p">As the game's first boss fight, the design goal was to systematically teach three core skills — attacking, dodging, and spacing management — with minimal frustration, while establishing player expectations for boss fight rhythm through a three-phase escalation structure.</p>
+            <div class="detail-callout">
+                <p data-i18n="bd.detail.pillars">Design Pillars: Engaging / Unique / Difficult / Multiple Stages / Test Specific Skills / Teach Player How to Play Better.</p>
+            </div>
+        </section>
+
+        <section class="detail-section">
+            <h2 data-i18n="bd.detail.phases">Three-Phase Escalation Design</h2>
+            <div class="detail-media">
+                <video autoplay loop muted playsinline><source src="../Images/bd-overview.mp4" type="video/mp4"></video>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-media">
+                    <video autoplay loop muted playsinline><source src="../Images/bd-phase1.mp4" type="video/mp4"></video>
+                </div>
+                <div>
+                    <h3 data-i18n="bd.detail.p1">Phase 1 — Tutorial Phase</h3>
+                    <p data-i18n="bd.detail.p1.desc">Boss slowly tracks the player with only Crush Attack available. The purpose is to let players learn the Tell → Attack → Recover rhythm in a low-pressure environment, mastering dodge timing and spacing control.</p>
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-media">
+                    <video autoplay loop muted playsinline><source src="../Images/bd-phase2.mp4" type="video/mp4"></video>
+                </div>
+                <div>
+                    <h3 data-i18n="bd.detail.p2">Phase 2 — Positioning Challenge</h3>
+                    <p data-i18n="bd.detail.p2.desc">Opens with Rock Slam creating debris obstacles across the arena, then unlocks Shockwave Slam (ring AOE). Players are forced to upgrade from passive standing to active repositioning, while utilizing arena obstacles for cover.</p>
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-media">
+                    <video autoplay loop muted playsinline><source src="../Images/bd-phase3.mp4" type="video/mp4"></video>
+                </div>
+                <div>
+                    <h3 data-i18n="bd.detail.p3">Phase 3 — Skill Stacking & Full Arena Pressure</h3>
+                    <p data-i18n="bd.detail.p3.desc">Phase 3 doesn't introduce entirely new attack types — instead it combines and layers attacks from the previous phases to escalate pressure. Rock Slam and Shockwave Slam fire simultaneously — players must dodge randomly scattered debris while also avoiding the expanding ring shockwave, severely compressing safe space. When players try to close in on the Boss, Spinning Blast fires in four directions to punish reckless aggression.</p>
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-media">
+                    <video autoplay loop muted playsinline><source src="../Images/bd-minion.mp4" type="video/mp4"></video>
+                </div>
+                <div>
+                    <h3>Minion Mechanic</h3>
+                    <p data-i18n="bd.detail.p3.minion">6 minions spawn at the start. Minions extend their arms to grab and lock down the player for ~3 seconds. If the Boss attacks during this window, the player faces an unavoidable lethal threat — forcing players to prioritize clearing minions before engaging the Boss.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section">
+            <h2 data-i18n="bd.detail.attacks">Attack Design</h2>
+            <p data-i18n="bd.detail.attacks.intro">All attacks follow a Tell → Attack → Recover rhythm, giving players clear reaction windows. 4 attack types cover different spatial threat dimensions:</p>
+
+            <div class="attack-grid">
+                <div class="attack-card">
+                    <div class="detail-media">
+                        <video autoplay loop muted playsinline><source src="../Images/bd-crush.mp4" type="video/mp4"></video>
+                    </div>
+                    <div class="attack-card-body">
+                        <h3 data-i18n="bd.detail.crush">Crush Attack</h3>
+                        <p data-i18n="bd.detail.crush.desc">Melee tracking attack. During the Tell phase, continuously tracks the player's position as the landing point, leaping toward the target in a ballistic arc. Tests dodge timing.</p>
+                    </div>
+                </div>
+
+                <div class="attack-card">
+                    <div class="detail-media">
+                        <video autoplay loop muted playsinline><source src="../Images/bd-shockwave.mp4" type="video/mp4"></video>
+                    </div>
+                    <div class="attack-card-body">
+                        <h3 data-i18n="bd.detail.shockwave">Shockwave Slam</h3>
+                        <p data-i18n="bd.detail.shockwave.desc">Ring AOE expanding outward from the Boss. Includes distance detection: if the player is close, Boss leaps back first before releasing, ensuring readability at any range.</p>
+                    </div>
+                </div>
+
+                <div class="attack-card">
+                    <div class="detail-media">
+                        <video autoplay loop muted playsinline><source src="../Images/bd-rockslam.mp4" type="video/mp4"></video>
+                    </div>
+                    <div class="attack-card-body">
+                        <h3 data-i18n="bd.detail.rockslam">Rock Slam</h3>
+                        <p data-i18n="bd.detail.rockslam.desc">Area denial. Boss slams the ground triggering scattered rocks with shadow warnings. In Phase 3, combined with Shockwave Slam to drastically compress safe space.</p>
+                    </div>
+                </div>
+
+                <div class="attack-card">
+                    <div class="detail-media">
+                        <video autoplay loop muted playsinline><source src="../Images/bd-spinblast.mp4" type="video/mp4"></video>
+                    </div>
+                    <div class="attack-card-body">
+                        <h3 data-i18n="bd.detail.spinblast">Spinning Blast</h3>
+                        <p data-i18n="bd.detail.spinblast.desc">Close-range punishment. Boss spins firing in four directions, creating gaps to weave through. In Phase 3, counters players who close in, forcing mid-to-long range engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section">
+            <h2 data-i18n="bd.detail.chooser">Attack Selection Rules</h2>
+            <div class="detail-callout">
+                <p data-i18n="bd.detail.chooser.p">No consecutive repeats of the same attack. Heavy attacks (Rock Slam, Spinning Blast) cannot fire back-to-back, forcing the Boss to alternate between "high pressure → breathing room → high pressure." Attack triggers split into two paths: melee trigger (player enters melee range → immediate attack selection) and impatience trigger (chase exceeds time threshold → proactive attack), ensuring the Boss cannot be kited.</p>
+            </div>
+        </section>
+
+        <section class="detail-section">
+            <h2 data-i18n="bd.detail.result">Final Result</h2>
+            <div class="detail-media">
+                <video autoplay loop muted playsinline><source src="../Images/bd-combo.mp4" type="video/mp4"></video>
+            </div>
         </section>
     </main>
 

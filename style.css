@@ -28,7 +28,7 @@
 body {
     font-family: 'Nunito Sans', sans-serif;
     line-height: 1.6;
-    font-size: 15px;
+    font-size: 16px;
     background:
         radial-gradient(ellipse at 15% -10%, rgba(220, 38, 38, 0.06) 0%, transparent 55%),
         radial-gradient(ellipse at 85% 110%, rgba(245, 158, 11, 0.04) 0%, transparent 55%),
@@ -234,7 +234,7 @@ a.nav-name:hover { color: var(--color-primary-hover); }
    Layout
    =========================== */
 main {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 24px;
 }
@@ -339,7 +339,14 @@ section h2::after {
 }
 .card:hover .card-media::after { opacity: 0.7; }
 
-.card-media img,
+.card-media img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--color-surface);
+}
+
 .card-media video {
     width: 100%; height: 100%;
     object-fit: cover;
@@ -399,7 +406,7 @@ section h2::after {
 }
 
 .card-body p {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--color-text-muted);
     line-height: 1.6;
     margin: 0;
@@ -613,9 +620,63 @@ section.scroll-reveal {
 /* On sub pages, lang toggle is in the nav area — no special override needed */
 
 .detail-content {
-    max-width: 860px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 24px 40px;
+}
+
+/* Side-by-side layout: video left, text right */
+.detail-row {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 24px;
+}
+
+.detail-row .detail-media {
+    margin-bottom: 0;
+}
+
+/* Attack grid: 2-column compact cards */
+.attack-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.attack-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.attack-card .detail-media {
+    margin-bottom: 0;
+    border-radius: 0;
+    border: none;
+}
+
+.attack-card-body {
+    padding: 14px 16px;
+}
+
+.attack-card-body h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0 0 6px;
+    padding-left: 10px;
+    border-left: 2px solid var(--color-primary);
+}
+
+.attack-card-body p {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin: 0;
 }
 
 .detail-section {
@@ -634,10 +695,20 @@ section.scroll-reveal {
     text-transform: uppercase;
 }
 
+.detail-section h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 24px 0 8px;
+    padding-left: 12px;
+    border-left: 2px solid var(--color-primary);
+}
+
 .detail-section p {
-    font-size: 0.92rem;
+    font-size: 1rem;
     color: var(--color-text-muted);
-    line-height: 1.8;
+    line-height: 1.85;
     margin-bottom: 12px;
 }
 
@@ -647,9 +718,9 @@ section.scroll-reveal {
 }
 
 .detail-section li {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--color-text-muted);
-    line-height: 1.8;
+    line-height: 1.85;
     padding-left: 20px;
     position: relative;
     margin-bottom: 8px;
@@ -821,6 +892,8 @@ section.scroll-reveal {
     .card-featured { grid-column: span 1; }
     .card-featured .card-media { aspect-ratio: 16 / 9; }
     .detail-media-grid { grid-template-columns: 1fr; }
+    .detail-row { grid-template-columns: 1fr; }
+    .attack-grid { grid-template-columns: 1fr; }
     .stat-grid { grid-template-columns: 1fr; }
 
     .detail-header h1 { font-size: 2rem; }
