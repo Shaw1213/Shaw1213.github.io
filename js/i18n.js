@@ -166,12 +166,10 @@
         "dnd.detail.event.seg.p": "\u6839\u636e\u4e09\u6863\u73a9\u5bb6\u6295\u5165\u7a0b\u5ea6\u8bbe\u8ba1\u4e86\u5dee\u5f02\u5316\u7684\u5b8c\u6210\u5ea6\u76ee\u6807\uff1a",
         "dnd.detail.event.seg.goal": "\u8bbe\u8ba1\u76ee\u6807\uff1aLowkey\u73a9\u5bb6\u80fd\u62ff\u5230\u6838\u5fc3\u5956\u52b1\u4e0d\u4f1a\u611f\u5230\u88ab\u6392\u65a5\uff0cEngaged\u73a9\u5bb6\u521a\u597d\u5b8c\u6210\u5168\u90e8\u4e8b\u4ef6\u5185\u5bb9\uff0cIntense\u73a9\u5bb6\u63d0\u524d\u5b8c\u6210\u5e76\u83b7\u5f97\u5168\u90e8\u6536\u96c6\u54c1\u4f5c\u4e3a\u989d\u5916\u6ee1\u8db3\u611f\u3002",
         "dnd.detail.event.pay": "\u4e8b\u4ef6\u53d8\u73b0",
+        "dnd.detail.ftue": "FTUE \u2014 \u65b0\u624b\u5f15\u5bfc",
+        "dnd.detail.ftue.p": "\u8bbe\u8ba1\u5e76\u5b9e\u73b0\u4e86\u5b8c\u6574\u7684\u65b0\u624b\u5f15\u5bfc\u6d41\u7a0b\u3002FTUE\u5f15\u5bfc\u73a9\u5bb6\u4f53\u9a8c\u6838\u5fc3\u53cc\u5faa\u73af\u2014\u2014\u5148\u8fdb\u884c\u4e00\u6b21\u6559\u5b66\u6027Roguelite\u6218\u6597\u83b7\u53d6\u6750\u6599\uff0c\u7136\u540e\u5b66\u4e60\u9152\u9986\u7ecf\u8425\u57fa\u7840\u2014\u2014\u5728\u653e\u5f00\u5b8c\u6574\u6e38\u620f\u4e4b\u524d\u5efa\u7acb\u8282\u594f\u611f\u3002",
         "dnd.detail.event.pay.p": "Infernal Pass\uff08$4.99\uff09\u53cc\u500dLava Coin + \u4e13\u5c5e\u5956\u52b1\u7ebf\u3001\u917f\u9020\u52a0\u901f\uff08\u4ed8\u8d39\u8df3\u8fc72\u5c0f\u65f6\u7b49\u5f85\uff09\u3002\u53d8\u73b0\u8bbe\u8ba1\u4e0d\u963b\u65ad\u514d\u8d39\u73a9\u5bb6\u7684\u6838\u5fc3\u4f53\u9a8c\uff0c\u4ed8\u8d39\u73a9\u5bb6\u83b7\u5f97\u52a0\u901f\u548c\u989d\u5916\u6536\u96c6\u54c1\u3002",
         "dnd.desc": "F2P手游。完整GDD、新手引导（FTUE）、付费活动设计。",
-        "rce.title": "Remote Code Execution",
-        "rce.desc": "你的车被黑客入侵了。按下正确的按键来夺回控制权。",
-        "ld.title": "关卡设计",
-        "ld.desc": "2D横版卷轴 + 3D解谜关卡。",
         "placeholder.screenshot": "截图即将上传",
         "placeholder.footage": "视频即将上传",
 
@@ -187,8 +185,7 @@
         "nav.back": "\u2190 返回主页",
         "nav.cat.shipped": "已发行游戏",
         "nav.cat.protos": "原型 & Demo",
-        "nav.dd.greatsword": "大剑战斗系统",
-        "nav.dd.level": "关卡设计"
+        "nav.dd.greatsword": "大剑战斗系统"
     };
 
     var STORAGE_KEY = 'lang';

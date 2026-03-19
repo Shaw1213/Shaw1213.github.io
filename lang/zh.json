@@ -166,12 +166,10 @@
     "dnd.detail.event.seg.p": "根据三档玩家投入程度设计了差异化的完成度目标：",
     "dnd.detail.event.seg.goal": "设计目标：Lowkey玩家能拿到核心奖励不会感到被排斥，Engaged玩家刚好完成全部事件内容，Intense玩家提前完成并获得全部收集品作为额外满足感。",
     "dnd.detail.event.pay": "事件变现",
+    "dnd.detail.ftue": "FTUE — 新手引导",
+    "dnd.detail.ftue.p": "设计并实现了完整的新手引导流程。FTUE引导玩家体验核心双循环——先进行一次教学性Roguelite战斗获取材料，然后学习酒馆经营基础——在放开完整游戏之前建立节奏感。",
     "dnd.detail.event.pay.p": "Infernal Pass（$4.99）双倍Lava Coin + 专属奖励线、酿造加速（付费跳过2小时等待）。变现设计不阻断免费玩家的核心体验，付费玩家获得加速和额外收集品。",
     "dnd.desc": "F2P手游。完整GDD、新手引导（FTUE）、付费活动设计。",
-    "rce.title": "Remote Code Execution",
-    "rce.desc": "你的车被黑客入侵了。按下正确的按键来夺回控制权。",
-    "ld.title": "关卡设计",
-    "ld.desc": "2D横版卷轴 + 3D解谜关卡。",
     "placeholder.screenshot": "截图即将上传",
     "placeholder.footage": "视频即将上传",
 
@@ -187,6 +185,5 @@
     "nav.back": "\u2190 返回主页",
     "nav.cat.shipped": "已发行游戏",
     "nav.cat.protos": "原型 & Demo",
-    "nav.dd.greatsword": "大剑战斗系统",
-    "nav.dd.level": "关卡设计"
+    "nav.dd.greatsword": "大剑战斗系统"
 }
