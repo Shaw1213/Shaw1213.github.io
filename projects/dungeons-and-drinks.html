@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dungeons & Drinks - Shawn Zhang</title>
-    <meta name="description" content="Shawn Zhang - Combat Designer portfolio. Shipped 2 Steam titles. Specialized in melee combat systems and gameplay design.">
+    <meta name="description" content="Roguelite + tavern management dual-loop F2P mobile game. System design: tiered economy, event design, monetization. 3-person team.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23dc2626'/><text x='16' y='22' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'>SZ</text></svg>">
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -37,32 +37,100 @@
 
         <header class="detail-header">
             <div class="tag-row">
+                <span class="tag tag-platform" data-i18n="tag.course">Course Project</span>
                 <span class="tag tag-engine">Unity Mobile</span>
-                <span class="tag tag-role">System Designer</span>
+                <span class="tag tag-role" data-i18n="tag.sysdes">System Designer</span>
             </div>
             <h1>Dungeons & Drinks</h1>
-            <p>F2P mobile game design. Full GDD, FTUE onboarding, monetization events. Led cross-discipline team.</p>
+            <p data-i18n="dnd.detail.desc">A Roguelite action + tavern management dual-loop F2P mobile game. The combat loop (Roguelite) provides materials and currency; the management loop (Tycoon) converts resources into permanent combat upgrades and passive income. The two loops feed each other. I designed the entire Tycoon management system and event system.</p>
         </header>
 
+        <!-- Stats -->
         <section class="detail-section">
-            <h2>Overview</h2>
-            <p><!-- Add your project overview here --></p>
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <span class="stat-value">Unity Mobile</span>
+                    <span class="stat-label">Engine</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" data-i18n="dnd.detail.team.val">3-Person Team</span>
+                    <span class="stat-label" data-i18n="dnd.detail.team.label">Team</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" data-i18n="dnd.detail.role.val">Tycoon + Event Design</span>
+                    <span class="stat-label" data-i18n="dnd.detail.role.label">My Role</span>
+                </div>
+            </div>
         </section>
 
+        <!-- Dual Loop -->
         <section class="detail-section">
-            <h2>Design Work</h2>
+            <h2 data-i18n="dnd.detail.loop">Dual-Loop Economy Design</h2>
+            <p data-i18n="dnd.detail.loop.p">The core structure is a mutual-feeding relationship between two loops:</p>
             <ul>
-                <li>Full GDD covering core gameplay loop, economy system, progression curves</li>
-                <li>FTUE (First Time User Experience) onboarding pipeline</li>
-                <li>Periodic in-app purchase event docs to drive retention</li>
-                <li>Led cross-discipline team: coordinating programmers, artists, and audio</li>
+                <li data-i18n="dnd.detail.loop.combat"><strong>Combat → Management:</strong> Players earn materials and currency through Roguelite combat (3 daily runs). Every 20 waves of enemies drop materials with increasing value, used for tavern upgrades and expansion.</li>
+                <li data-i18n="dnd.detail.loop.manage"><strong>Management → Combat:</strong> Tavern upgrades provide permanent combat stat boosts (ATK, HP). Hired employees each have a signature drink that serves as a one-time consumable in combat, providing unique abilities. The tavern also generates passive income for further upgrades.</li>
+            </ul>
+            <div class="detail-callout">
+                <p data-i18n="dnd.detail.loop.intent">Design intent: combat provides short-term excitement and challenge; management provides long-term growth and relaxation. The rhythms complement each other, preventing fatigue from either loop alone.</p>
+            </div>
+        </section>
+
+        <!-- Tycoon System -->
+        <section class="detail-section">
+            <h2 data-i18n="dnd.detail.tycoon">Tycoon System Design</h2>
+
+            <h3 data-i18n="dnd.detail.staff">Employee System</h3>
+            <p data-i18n="dnd.detail.staff.p">Each employee has a unique signature drink used as a one-time combat consumable with different buffs. Employee unlocks and upgrades are driven by combat materials, creating a "fight → unlock → fight better → unlock more" positive feedback loop.</p>
+
+            <h3 data-i18n="dnd.detail.upgrade">Upgrade System</h3>
+            <p data-i18n="dnd.detail.upgrade.p">Tavern facility upgrades cost materials and currency, providing two types of returns: permanent combat stat boosts (direct power increase) and passive income boosts (accelerated resource accumulation). Upgrades require real-time waiting, creating natural pacing checkpoints.</p>
+
+            <h3 data-i18n="dnd.detail.tier">Tiered Economy Balance</h3>
+            <p data-i18n="dnd.detail.tier.p">The Tycoon upgrade system uses a 6-tier progression structure. Each tier's purchase cost, output efficiency, and ROI are quantitatively designed to ensure clear decision rhythms at every stage.</p>
+            <div class="detail-callout">
+                <p data-i18n="dnd.detail.tier.logic">Design logic: low tiers (1-2) have fast payback and low entry cost, but ROI degrades sharply with repeated purchases. High tiers (5-6) require large upfront investment and slow payback, but marginal returns decay more gently. This naturally creates a "stop buying low tier → save for high tier" decision inflection point, forming a healthy idle game loop.</p>
+            </div>
+            <div class="detail-media">
+                <img src="../Images/dnd-economy.png" alt="Tiered Economy Chart">
+            </div>
+        </section>
+
+        <!-- Monetization -->
+        <section class="detail-section">
+            <h2 data-i18n="dnd.detail.monetize">Monetization Checkpoints</h2>
+            <p data-i18n="dnd.detail.monetize.p">Three core monetization points are embedded in the Tycoon system, each targeting a different player motivation:</p>
+            <ul>
+                <li data-i18n="dnd.detail.monetize.daily"><strong>Daily combat limit</strong> (3 runs/day, purchasable extra runs) — progression-driven</li>
+                <li data-i18n="dnd.detail.monetize.revive"><strong>In-combat revive</strong> (paid) — frustration-driven</li>
+                <li data-i18n="dnd.detail.monetize.speed"><strong>Upgrade time skip</strong> (paid) — patience-driven</li>
             </ul>
         </section>
 
+        <!-- Event Design -->
         <section class="detail-section">
-            <h2>Media</h2>
-            <!-- Add screenshots, GDD excerpts, flowcharts, etc. -->
+            <h2 data-i18n="dnd.detail.event">Event Design — The Infernal Happy Hour</h2>
+            <p data-i18n="dnd.detail.event.p">I independently designed a 7-day limited-time event with a complete event loop, progression plan, player segmentation, and monetization strategy.</p>
+
+            <h3 data-i18n="dnd.detail.event.loop">Event Loop</h3>
+            <p data-i18n="dnd.detail.event.loop.p">The event introduces exclusive event currency (Lava Coins), limited-time enemies (fire-type), limited-time drinks (Hellfire Drinks), and exclusive rewards. The event loop nests on top of the core dual-loop: complete Infernal Challenges for Lava Coins and hell ingredients → brew Hellfire Drinks for combat/management buffs → spend Lava Coins for limited rewards.</p>
+
+            <h3 data-i18n="dnd.detail.event.prog">7-Day Progression</h3>
+            <p data-i18n="dnd.detail.event.prog.p">New content unlocks daily to maintain freshness: Day 1 new recipe, Day 2 new ingredient, Day 4 Boss fight, Day 7 limited employee unlock. Free daily login rewards guarantee baseline retention.</p>
+
+            <h3 data-i18n="dnd.detail.event.seg">Player Segmentation</h3>
+            <p data-i18n="dnd.detail.event.seg.p">Differentiated completion targets designed for three tiers of player engagement:</p>
+            <div class="detail-media">
+                <img src="../Images/dnd-event.png" alt="Lava Coins Progression Chart">
+            </div>
+            <div class="detail-callout">
+                <p data-i18n="dnd.detail.event.seg.goal">Design goal: Lowkey players can earn core rewards without feeling excluded. Engaged players complete all event content exactly. Intense players finish early and collect everything for extra satisfaction.</p>
+            </div>
+
+            <h3 data-i18n="dnd.detail.event.pay">Event Monetization</h3>
+            <p data-i18n="dnd.detail.event.pay.p">Infernal Pass ($4.99): double Lava Coins + exclusive reward track. Brew acceleration (paid skip of 2-hour wait). Monetization does not block the free player's core experience — paying players get acceleration and extra collectibles.</p>
         </section>
+
     </main>
 
     <script>
@@ -72,6 +140,6 @@
         cats.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { cats.classList.remove('open'); toggle.classList.remove('active'); }); });
     </script>
     <script src="../js/combat-vfx.js"></script>
-    <script src="../js/i18n.js?v=3"></script>
+    <script src="../js/i18n.js?v=5"></script>
 </body>
 </html>
