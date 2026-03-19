@@ -36,32 +36,17 @@
         <a href="../" class="detail-back" data-i18n="nav.back">&larr; Back to Portfolio</a>
 
         <header class="detail-header">
-            <h1>About Me</h1>
+            <h1 data-i18n="about.title">Resume</h1>
+            <div class="detail-actions">
+                <a href="../Images/resume-en.pdf" class="btn btn-primary" target="_blank" data-i18n="about.resume">Download Resume (EN)</a>
+                <a href="../Images/resume-zh.pdf" class="btn btn-outline" target="_blank" data-i18n="about.resume.zh">下载简历 (中文)</a>
+            </div>
         </header>
 
         <section class="detail-section">
-            <h2>Background</h2>
-            <p><!-- Add your background here --></p>
-        </section>
-
-        <section class="detail-section">
-            <h2>Skills</h2>
-            <ul>
-                <!-- Add skills -->
-            </ul>
-        </section>
-
-        <section class="detail-section">
-            <h2>Education</h2>
-            <p><!-- Add education here --></p>
-        </section>
-
-        <section class="detail-section">
-            <h2>Contact</h2>
-            <ul>
-                <li><a href="mailto:z.yuxiao@icloud.com">z.yuxiao@icloud.com</a></li>
-                <li><a href="https://www.linkedin.com/in/yuxiao-zhang-dev" target="_blank">LinkedIn</a></li>
-            </ul>
+            <div class="detail-media" style="background: #fff; border-radius: 8px; overflow: hidden;">
+                <embed src="../Images/resume-en.pdf#toolbar=0&navpanes=0" type="application/pdf" width="100%" style="height: 80vh;" id="resume-viewer">
+            </div>
         </section>
     </main>
 
@@ -72,6 +57,19 @@
         cats.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { cats.classList.remove('open'); toggle.classList.remove('active'); }); });
     </script>
     <script src="../js/combat-vfx.js"></script>
-    <script src="../js/i18n.js?v=5"></script>
+    <script src="../js/i18n.js?v=6"></script>
+    <script>
+        // Switch PDF viewer based on language
+        function updateResume() {
+            var lang = localStorage.getItem('lang') || 'en';
+            var params = new URLSearchParams(window.location.search);
+            if (params.has('lang')) lang = params.get('lang');
+            var viewer = document.getElementById('resume-viewer');
+            if (viewer) viewer.src = lang === 'zh' ? '../Images/resume-zh.pdf#toolbar=0&navpanes=0' : '../Images/resume-en.pdf#toolbar=0&navpanes=0';
+        }
+        updateResume();
+        var btn = document.getElementById('lang-toggle');
+        if (btn) btn.addEventListener('click', function() { setTimeout(updateResume, 50); });
+    </script>
 </body>
 </html>

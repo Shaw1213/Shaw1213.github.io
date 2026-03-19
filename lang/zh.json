@@ -179,6 +179,11 @@
     "tag.bossui": "Boss战斗策划 / UI",
     "tag.course": "课程项目",
 
+    "about.title": "简历",
+    "about.resume": "下载简历 (EN)",
+    "about.resume.zh": "下载简历 (中文)",
+    "footer.resume": "简历",
+
     "nav.home": "首页",
     "nav.about": "关于我",
     "nav.email": "邮箱",
