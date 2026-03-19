@@ -22,6 +22,8 @@ Push to `main` branch — GitHub Pages deploys automatically from repository roo
 
 **CRITICAL: `.gitignore` excludes `content/` — files in `content/` are NOT deployed.** All media assets referenced in HTML must live in `Images/`, never `content/`. The `content/` folder is local-only workspace.
 
+**CRITICAL: Cache busting.** Cloudflare CDN caches JS/CSS with `max-age=14400` (4 hours). When updating `i18n.js` or any JS/CSS file with new content, bump the cache-bust query param on ALL `<script>`/`<link>` tags that reference it (e.g. `i18n.js?v=2` → `i18n.js?v=3`). This must be done across ALL HTML files that load the file (index.html, projects/*.html). Without this, browsers will serve the old cached version and new translations/features won't appear on the live site.
+
 ## Architecture
 
 ### Pages
