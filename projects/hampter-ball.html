@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hampter Ball - Shawn Zhang</title>
-    <meta name="description" content="Shawn Zhang - Combat Designer portfolio. Shipped 2 Steam titles. Specialized in melee combat systems and gameplay design.">
+    <meta name="description" content="3-day game jam project. Physics-based hamster collision game with mass system, enemy AI, and browser playable build. Unity C#.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23dc2626'/><text x='16' y='22' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'>SZ</text></svg>">
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -23,8 +23,6 @@
                     <a href="bricks-over-blocks.html">Bricks Over Blocks</a>
                     <a href="dungeons-and-drinks.html">Dungeons & Drinks</a>
                     <a href="hampter-ball.html">Hampter Ball</a>
-                    <a href="remote-code-execution.html">Remote Code Execution</a>
-                    <a href="level-design.html" data-i18n="nav.dd.level">Level Design</a>
                 </div>
             </div>
             <a href="about.html" class="nav-link" data-i18n="nav.about">About</a>
@@ -39,34 +37,73 @@
 
         <header class="detail-header">
             <div class="tag-row">
+                <span class="tag tag-platform">Game Jam</span>
                 <span class="tag tag-platform">Itch.io</span>
-                <span class="tag tag-engine">Unity</span>
+                <span class="tag tag-engine">Unity C#</span>
                 <span class="tag tag-role">Engineer / Designer</span>
             </div>
             <h1>Hampter Ball</h1>
-            <p>Roll your Hampter to push off enemies across tough stages.</p>
+            <p data-i18n="hb.detail.desc">A physics-based hamster collision game built in 3 days for a game jam. Roll your hamster, collect sunflower seeds to gain mass, and slam enemies off the platform. Playable in browser.</p>
             <div class="detail-actions">
                 <a href="../play.html?game=hampter-ball" class="btn btn-primary">Play in Browser</a>
                 <a href="https://almitytuhm.itch.io/hampter-ball" class="btn btn-outline" target="_blank">Itch.io</a>
             </div>
         </header>
 
+        <!-- Gameplay Video -->
         <section class="detail-section">
-            <h2>Overview</h2>
-            <p><!-- Add your project overview here --></p>
+            <div class="detail-media">
+                <video autoplay loop muted playsinline><source src="../Images/hb-gameplay.mp4" type="video/mp4"></video>
+            </div>
         </section>
 
+        <!-- Stats -->
         <section class="detail-section">
-            <h2>My Contributions</h2>
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <span class="stat-value">Unity C#</span>
+                    <span class="stat-label">Engine</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" data-i18n="hb.detail.time.val">3 Days</span>
+                    <span class="stat-label" data-i18n="hb.detail.time.label">Game Jam</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" data-i18n="hb.detail.role.val">Design + Code + AI</span>
+                    <span class="stat-label" data-i18n="hb.detail.role.label">My Role</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Gameplay -->
+        <section class="detail-section">
+            <h2 data-i18n="hb.detail.gameplay">Core Gameplay</h2>
+            <p data-i18n="hb.detail.gameplay.p">A two-player spherical hamster collision game where the goal is to knock the opponent off the platform. Players collect sunflower seeds scattered across the arena to feed their hamster and increase its physics mass — the heavier you are, the stronger your collision advantage.</p>
+            <div class="detail-callout">
+                <p data-i18n="hb.detail.gameplay.loop">Core Loop: Collect Seeds → Feed &amp; Gain Mass → Collision Advantage → Knock Off Opponent</p>
+            </div>
+        </section>
+
+        <!-- Mass System -->
+        <section class="detail-section">
+            <h2 data-i18n="hb.detail.mass">Mass System Design</h2>
+            <p data-i18n="hb.detail.mass.p">Gaining mass affects multiple dimensions simultaneously: collision knockback force scales with mass ratio, wall-break damage = mass × velocity, movement force grows exponentially with mass (but speed is capped), and at mass 7.0 the hamster visually transforms from small to large.</p>
+            <div class="detail-callout">
+                <p data-i18n="hb.detail.mass.decay">Key design: mass continuously decays (-0.1/sec, minimum 0.5). Players can't just stockpile mass and rush — they must constantly decide between "maintaining weight" and "attacking now," creating a tense eat → fight → eat cycle.</p>
+            </div>
+        </section>
+
+        <!-- Enemy AI -->
+        <section class="detail-section">
+            <h2 data-i18n="hb.detail.ai">Enemy AI</h2>
+            <p data-i18n="hb.detail.ai.p">Three enemy types, all driven by physics forces (no NavMesh):</p>
             <ul>
-                <!-- Add contributions -->
+                <li data-i18n="hb.detail.ai.basic"><strong>Basic Enemy:</strong> Applies AddForce toward the player's direction to chase</li>
+                <li data-i18n="hb.detail.ai.pirate"><strong>Pirate Hamster:</strong> Follows preset waypoints, then launches from a cannon toward the player (trigger-collision-driven state machine + physics-force movement)</li>
+                <li data-i18n="hb.detail.ai.boss"><strong>LV1 Boss:</strong> Initiates a cooldown-based charge when the player enters a distance threshold</li>
             </ul>
         </section>
 
-        <section class="detail-section">
-            <h2>Media</h2>
-            <!-- Add images, GIFs, or videos -->
-        </section>
     </main>
 
     <script>
@@ -76,6 +113,6 @@
         cats.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { cats.classList.remove('open'); toggle.classList.remove('active'); }); });
     </script>
     <script src="../js/combat-vfx.js"></script>
-    <script src="../js/i18n.js"></script>
+    <script src="../js/i18n.js?v=3"></script>
 </body>
 </html>
