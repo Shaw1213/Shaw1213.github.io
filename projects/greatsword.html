@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greatsword Combat System - Shawn Zhang</title>
-    <meta name="description" content="Shawn Zhang - Combat Designer portfolio. Shipped 2 Steam titles. Specialized in melee combat systems and gameplay design.">
+    <meta name="description" content="Dark Souls-inspired greatsword combat system built in UE5 C++ with GAS. 6 attack types, HitStop feedback, Behavior Tree AI, stamina management. Built in 7 days.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23dc2626'/><text x='16' y='22' font-family='Arial' font-size='18' font-weight='bold' fill='white' text-anchor='middle'>SZ</text></svg>">
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -39,59 +39,247 @@
 
         <header class="detail-header">
             <div class="tag-row">
+                <span class="tag tag-platform">Demo</span>
                 <span class="tag tag-engine">UE5 C++</span>
                 <span class="tag tag-engine">GAS</span>
                 <span class="tag tag-role">Solo Dev</span>
             </div>
             <h1>Greatsword Combat System</h1>
-            <p>Dark Souls-inspired combat demo. 6 attack types, HitStop + CameraShake, Behavior Tree AI with stagger/knockback, GAS attributes. Built in 7 days.</p>
+            <p data-i18n="gs.detail.desc">A third-person melee combat system centered around a greatsword. Design references: Dark Souls stamina management + Monster Hunter charge attack commitment + Elden Ring guard counter. Core experience: every swing carries weight and decision cost — each attack is a risk investment.</p>
         </header>
 
+        <!-- Overview Video -->
         <section class="detail-section">
-            <h2>Combat Architecture</h2>
-            <ul>
-                <li>6 attack types: light, heavy, sprint, shield bash, charged, jump attack</li>
-                <li>Each attack has independent damage values and stamina cost</li>
-                <li>Stamina management creates high-risk/high-reward combat rhythm</li>
-            </ul>
-        </section>
-
-        <section class="detail-section">
-            <h2>Hit Feedback</h2>
-            <ul>
-                <li>HitStop + CameraShake scaled by attack type (light 1.0x, heavy 2.0x, charged 3.0x)</li>
-                <li>Frame freeze and camera shake emphasize the weight of the greatsword</li>
-            </ul>
-        </section>
-
-        <section class="detail-section">
-            <h2>Enemy AI & Reaction System</h2>
-            <ul>
-                <li>Behavior Tree-driven AI</li>
-                <li>Three reaction types: stagger, knockback, stun</li>
-                <li>GameplayTag-driven reaction selection for differentiated combat feedback</li>
-            </ul>
-        </section>
-
-        <section class="detail-section">
-            <h2>Resource & State Management</h2>
-            <ul>
-                <li>Stamina as core combat resource: attacks, rolls, sprints all consume stamina</li>
-                <li>Delayed recovery forces meaningful attack/defend decisions</li>
-                <li>Roll, dodge, block, light/heavy hit differentiation via Rising/Falling edge detection</li>
-            </ul>
-        </section>
-
-        <section class="detail-section">
-            <h2>Media</h2>
-            <!-- Add gameplay GIFs, videos, or screenshots:
             <div class="detail-media">
-                <video controls>
-                    <source src="../Images/greatsword-demo.mp4" type="video/mp4">
-                </video>
+                <video autoplay loop muted playsinline><source src="../content/greatsword/Gif showcase New.mp4" type="video/mp4"></video>
             </div>
-            -->
         </section>
+
+        <!-- Stats -->
+        <section class="detail-section">
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <span class="stat-value">UE5 C++</span>
+                    <span class="stat-label">Engine</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" data-i18n="gs.detail.time.val">7 Days</span>
+                    <span class="stat-label" data-i18n="gs.detail.time.label">Timeline</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" data-i18n="gs.detail.role.val">Solo</span>
+                    <span class="stat-label" data-i18n="gs.detail.role.label">Design + Code + AI + HUD</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Goal -->
+        <section class="detail-section">
+            <h2 data-i18n="gs.detail.goal">Design Goal</h2>
+            <p data-i18n="gs.detail.goal.p">Build a greatsword-centric third-person combat system where every attack feels heavy and deliberate. The combat loop is designed around stamina as a shared resource — players must constantly weigh "one more swing" against "saving enough to dodge."</p>
+            <div class="detail-callout">
+                <p data-i18n="gs.detail.goal.pillars">Design Pillars: Weight &amp; Impact / Risk-Reward Stamina Economy / Defensive-to-Offensive Transitions / Animation Cancel Skill Expression / Readable Enemy Reactions</p>
+            </div>
+        </section>
+
+        <!-- Attack System -->
+        <section class="detail-section">
+            <h2 data-i18n="gs.detail.attacks">Attack System — 6 Types</h2>
+            <p data-i18n="gs.detail.attacks.intro">Six attack types cover different combat scenarios, differentiated by stamina cost and enemy reaction type:</p>
+
+            <div class="attack-grid">
+                <div class="attack-card">
+                    <div class="detail-media">
+                        <video autoplay loop muted playsinline><source src="../content/greatsword/Gif 1H light attack combo.mp4" type="video/mp4"></video>
+                    </div>
+                    <div class="attack-card-body">
+                        <h3 data-i18n="gs.detail.light">Light Attack</h3>
+                        <p data-i18n="gs.detail.light.p">Combo chain with lowest stamina cost (10). Fast startup, triggers Stagger. The safe, sustained damage option for maintaining offensive pressure.</p>
+                    </div>
+                </div>
+
+                <div class="attack-card">
+                    <div class="detail-media">
+                        <video autoplay loop muted playsinline><source src="../content/greatsword/Gif 1H Heavy attack combo.mp4" type="video/mp4"></video>
+                    </div>
+                    <div class="attack-card-body">
+                        <h3 data-i18n="gs.detail.heavy">Heavy Attack</h3>
+                        <p data-i18n="gs.detail.heavy.p">High damage punish (stamina cost 25). Triggers Stagger. Designed as the primary reward for reading enemy openings — higher investment, higher payoff than light attacks.</p>
+                    </div>
+                </div>
+
+                <div class="attack-card">
+                    <div class="detail-media">
+                        <video autoplay loop muted playsinline><source src="../content/greatsword/Gif 1H jump attack light and heavy .mp4" type="video/mp4"></video>
+                    </div>
+                    <div class="attack-card-body">
+                        <h3 data-i18n="gs.detail.jump">Jump Attack</h3>
+                        <p data-i18n="gs.detail.jump.p">Aerial attack with light/heavy variants. Adds vertical combat options and serves as a follow-up from jump dodges, enriching spatial combat layers.</p>
+                    </div>
+                </div>
+
+                <div class="attack-card">
+                    <div class="detail-media">
+                        <video autoplay loop muted playsinline><source src="../content/greatsword/Gif 2H sheild attack enemy knock back .mp4" type="video/mp4"></video>
+                    </div>
+                    <div class="attack-card-body">
+                        <h3 data-i18n="gs.detail.shield">Shield Attack</h3>
+                        <p data-i18n="gs.detail.shield.p">Attack from guard stance (stamina cost 30). Triggers Knockback. Inspired by Elden Ring's guard counter — a direct defense-to-offense transition without needing to drop guard first.</p>
+                    </div>
+                </div>
+
+                <div class="attack-card">
+                    <div class="detail-media">
+                        <video autoplay loop muted playsinline><source src="../content/greatsword/Gif 1H charge attack knock back enemy.mp4" type="video/mp4"></video>
+                    </div>
+                    <div class="attack-card-body">
+                        <h3 data-i18n="gs.detail.charge">Charge Attack</h3>
+                        <p data-i18n="gs.detail.charge.p">Highest risk, highest reward (stamina cost 35). Locked in place during charge — no movement or dodge. Triggers Knockback on hit. Inspired by Monster Hunter greatsword's true charged slash philosophy.</p>
+                    </div>
+                </div>
+
+                <div class="attack-card">
+                    <div class="detail-media">
+                        <video autoplay loop muted playsinline><source src="../content/greatsword/Gif Attack cancel animation to roll attack.mp4" type="video/mp4"></video>
+                    </div>
+                    <div class="attack-card-body">
+                        <h3 data-i18n="gs.detail.roll">Roll Attack</h3>
+                        <p data-i18n="gs.detail.roll.p">Special attack triggered after a roll. Same damage as light attack, triggers Stagger. Provides a seamless dodge-to-offense transition, keeping combat flow uninterrupted.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roll & Animation Cancel -->
+        <section class="detail-section">
+            <h2 data-i18n="gs.detail.cancel">Roll &amp; Animation Cancel</h2>
+            <div class="detail-row">
+                <div class="detail-media">
+                    <video autoplay loop muted playsinline><source src="../content/greatsword/Gif attack cancel to roll attack.mp4" type="video/mp4"></video>
+                </div>
+                <div>
+                    <p data-i18n="gs.detail.cancel.p">Roll input overrides all attack recovery frames, enabling animation canceling. Skilled players can chain Attack → Roll Cancel → Roll Attack → Attack for burst damage far exceeding normal combos.</p>
+                    <div class="detail-callout">
+                        <p data-i18n="gs.detail.cancel.callout">The deliberate trade-off: rolls cost 20 stamina on top of attack costs, so this cancel loop drains stamina extremely fast. Players must balance burst damage output against keeping enough stamina to escape when the enemy retaliates. Greedy play is powerful but punished hard.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weapon Stance -->
+        <section class="detail-section">
+            <h2 data-i18n="gs.detail.stance">Weapon Stance (1H / 2H)</h2>
+            <p data-i18n="gs.detail.stance.p">Players can switch between one-handed (1H) and two-handed (2H) weapon stances. Each stance has its own independent animation set, providing visual variety across the same attack types.</p>
+            <div class="detail-media-grid">
+                <div class="detail-media">
+                    <video autoplay loop muted playsinline><source src="../content/greatsword/gif - light_attack — 轻击combo连击.mp4" type="video/mp4"></video>
+                </div>
+                <div class="detail-media">
+                    <video autoplay loop muted playsinline><source src="../content/greatsword/gif - heavy_attack — 重击 + 高伤害展示.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+        </section>
+
+        <!-- HitStop -->
+        <section class="detail-section">
+            <h2 data-i18n="gs.detail.hitstop">Hit Feedback — HitStop System</h2>
+            <div class="detail-row">
+                <div class="detail-media">
+                    <video autoplay loop muted playsinline><source src="../content/greatsword/Gif HitstopShowcase.mp4" type="video/mp4"></video>
+                </div>
+                <div>
+                    <p data-i18n="gs.detail.hitstop.p">Hit feedback is the core "feel" layer of the combat system.</p>
+                    <ul>
+                        <li data-i18n="gs.detail.hitstop.l1"><strong>HitStop:</strong> On hit, enemy time dilation drops to 0.01 (near-frozen), player drops to 0.05 (micro-stutter), lasting 0.06 seconds</li>
+                        <li data-i18n="gs.detail.hitstop.l2">Creates a momentary "blade cutting in" sensation — every swing lands with tangible weight</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stamina System -->
+        <section class="detail-section">
+            <h2 data-i18n="gs.detail.stamina">Stamina System</h2>
+            <p data-i18n="gs.detail.stamina.p">Dark Souls-style stamina gating: at 0 stamina all attacks and rolls are locked, but any stamina above 0 allows action (even if it bottoms out after). This creates the classic Souls trade-off — always deciding between "one more hit" and "save enough to survive."</p>
+
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <span class="stat-value">10</span>
+                    <span class="stat-label" data-i18n="gs.detail.sta.light">Light Attack</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">20</span>
+                    <span class="stat-label" data-i18n="gs.detail.sta.roll">Roll</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">25</span>
+                    <span class="stat-label" data-i18n="gs.detail.sta.heavy">Heavy Attack</span>
+                </div>
+            </div>
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <span class="stat-value">30</span>
+                    <span class="stat-label" data-i18n="gs.detail.sta.shield">Shield Attack</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">35</span>
+                    <span class="stat-label" data-i18n="gs.detail.sta.charge">Charge Attack</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">15/s</span>
+                    <span class="stat-label" data-i18n="gs.detail.sta.sprint">Sprint</span>
+                </div>
+            </div>
+
+            <div class="detail-callout">
+                <p data-i18n="gs.detail.stamina.callout">Recovery: 2-second delay after last stamina-consuming action, then regenerates at 30/sec. Timer resets on any attack, roll, or sprint — no passive regen during offense.</p>
+            </div>
+        </section>
+
+        <!-- Enemy AI -->
+        <section class="detail-section">
+            <h2 data-i18n="gs.detail.ai">Enemy AI &amp; Reaction System</h2>
+
+            <div class="detail-row">
+                <div class="detail-media">
+                    <video autoplay loop muted playsinline><source src="../content/greatsword/Gif 行为树AI.mp4" type="video/mp4"></video>
+                </div>
+                <div>
+                    <h3 data-i18n="gs.detail.ai.bt">Behavior Tree AI</h3>
+                    <p data-i18n="gs.detail.ai.bt.p">Enemy AI driven by UE5 Behavior Tree. BTService runs sphere detection every 0.25s, locking onto the player and updating distance. Attack decisions: 30% chance of heavy attack animation, otherwise normal attack. Faces target before playing Montage. Interrupted on stagger or death.</p>
+                </div>
+            </div>
+
+            <h3 data-i18n="gs.detail.ai.tag">GameplayTag-Driven Reactions</h3>
+            <p data-i18n="gs.detail.ai.tag.p">Enemy hit reactions are driven by GAS GameplayEffect Asset Tags. When a weapon connects, the corresponding GE is applied, and its Tag determines the reaction type:</p>
+            <ul>
+                <li data-i18n="gs.detail.ai.tag.stagger"><strong>Stagger</strong> (hit stun + Montage) — triggered by Light, Heavy, Jump, Roll attacks</li>
+                <li data-i18n="gs.detail.ai.tag.kb"><strong>Knockback</strong> (Montage + LaunchCharacter) — triggered by Shield Attack, Charge Attack</li>
+            </ul>
+            <div class="detail-media-grid">
+                <div class="detail-media">
+                    <video autoplay loop muted playsinline><source src="../content/greatsword/Gif enemy AI stagger to light attack .mp4" type="video/mp4"></video>
+                </div>
+                <div class="detail-media">
+                    <video autoplay loop muted playsinline><source src="../content/greatsword/Gif enemy Die to 1H sheild attack.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+            <p data-i18n="gs.detail.ai.tag.adv">Advantage: reaction types are configured in GE blueprint Tags — adding new attacks or adjusting reactions only requires data asset changes, no C++ modifications.</p>
+        </section>
+
+        <!-- Technical Architecture -->
+        <section class="detail-section">
+            <h2 data-i18n="gs.detail.tech">Technical Architecture</h2>
+            <ul>
+                <li data-i18n="gs.detail.tech.engine"><strong>Engine:</strong> UE5 C++ + Blueprint</li>
+                <li data-i18n="gs.detail.tech.gas"><strong>Combat Framework:</strong> Gameplay Ability System (ASC mounted on PlayerState for multiplayer persistence)</li>
+                <li data-i18n="gs.detail.tech.ai"><strong>Enemy AI:</strong> Behavior Tree + BTService detection + BTTask attacks</li>
+                <li data-i18n="gs.detail.tech.react"><strong>Reaction System:</strong> GE Asset Tags → Delegate callback → unified HandleReaction()</li>
+                <li data-i18n="gs.detail.tech.anim"><strong>Animation:</strong> AnimBP state machine (Idle/Walk, JumpStart, Fall, Land) + GameplayTag-driven state switching</li>
+                <li data-i18n="gs.detail.tech.hud"><strong>HUD:</strong> C++-driven health/stamina UI</li>
+            </ul>
+        </section>
+
     </main>
 
     <script>
